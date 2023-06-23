@@ -1,9 +1,15 @@
 "use client"
-import React from 'react'
+import { Button } from 'antd'
+import React, { useState } from 'react'
+import Monitor from './Monitor'
 
 const HomePage = () => {
+  const [isZoomed, setisZoomed] = useState(false)
+
   return (
-    <div>Home</div>
+    <div style={{ display: "flex", height: "100vh", width: "100%", justifyContent: "center", alignItems: "center" }}>
+      <Monitor />
+    </div>
   )
 }
 

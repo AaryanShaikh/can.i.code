@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,700');
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #35AFBE;
+  overflow: hidden;
+}
+
+.window {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+.container {
+  height: 10px;
+  border: 2px solid #b2b2b2;
+  border-radius: 7px;
+  margin: 0 auto;
+  padding: 2px 1px;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.box {
+  width: 9px;
+  height: 100%;
+  background: linear-gradient(to bottom, #2838c7 0%, #5979ef 17%, #869ef3 32%, #869ef3 45%, #5979ef 59%, #2838c7 100%);
+  display: inline-block;
+  margin-right: 2px;
+  animation: loader 2s infinite;
+  animation-timing-function: linear;
+}
+
+.logo {
+  width: 220px;
+  margin: 50px auto;
+}
+
+.logo p {
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+}
+
+.top:after {
+  content: "\00a9";
+  font-size: 10px;
+  position: relative;
+  top: -5px;
+  margin-left: 2px;
+}
+
+.mid {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.mid span {
+  font-size: 22px;
+  display: inline-block;
+  vertical-align: top;
+  color: #FF6821;
+  margin-top: -8px;
+}
+
+.logo .bottom {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-left: 5px;
+
+}
+
+@keyframes loader {
+  0% {
+    transform: translate(-30px);
+  }
+
+  100% {
+    transform: translate(250px);
+  }
+}
+
+.accounts {
+  opacity: 0.6;
+}
+
+.accounts:hover {
+  opacity: 1;
+}
+
+.turnOffBtn {
+  position: relative;
+  background-color: #da5020;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.7) 0%, rgba(70, 161, 252, 0) 50%);
+}
+
+.turnOffBtn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #fff;
+  border-radius: 50px;
+  width: 24px;
+  height: 24px;
+}
+
+.turnOffBtn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 3px;
+  height: 8px;
+}
+
+.startBtn {
+  position: relative;
+  display: inline-block;
+  font-size: 21px;
+  color: white;
+  font-style: italic;
+  padding: 5px 25px 5px 15px;
+  text-shadow: 1px 1px 1px #333;
+  border-radius: 0px 10px 15px 0px;
+  border: none;
+  box-shadow: 0px 5px 10px #79ce71 inset;
+  background: radial-gradient(circle, #5eac56 0%, #3c873c 100%) center/cover no-repeat;
+  cursor: pointer;
+}
+.startBtn::before{
+  content: "";
+  background: url('/img/windowsLogo.png') center/cover no-repeat;
+  position: relative;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  top: 1px;
+  transform: skewX(3deg);
+  filter: drop-shadow(1px 1px 1px #333);
+  margin-right: 5px;
+}
+.startBtn.active{
+  box-shadow: 0px 0px 15px #333 inset;
+}
+.startMenu{
+  position: absolute;
+  background-color: #0c8dea;
+  width: 380px;
+  height: 550px;
+  left: 0%;
+  bottom: 4%;
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 2px 6px 10px #333, -2px 0px 5px rgba(20, 20, 20, 0.6) inset, 2px 0px 3px #7fbce8 inset;
+  overflow: hidden;
+}
