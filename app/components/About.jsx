@@ -8,18 +8,8 @@ import { resume } from '../data';
 import ResumeItem from './ResumeItem';
 
 const About = () => {
-    const [scrollPosition, setScrollPosition] = useState(0);
-    let rafId = null;
-
-    const handleScroll = (event) => {
-        cancelAnimationFrame(rafId); // Cancel previous animation frame
-        rafId = requestAnimationFrame(() => {
-            setScrollPosition(event.target.scrollTop);
-        });
-    };
-
     return (
-        <main onScroll={handleScroll} className="section container">
+        <main className="section container">
             <section className="about">
                 <h2 className="section__title">About <span>Me</span></h2>
                 <div className="about__container grid">
