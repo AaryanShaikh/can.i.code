@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import Chart from "react-apexcharts";
+import dynamic from 'next/dynamic'
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 import { skills } from '../data';
 import { SiNextdotjs } from 'react-icons/si'
 
@@ -52,14 +53,16 @@ const Skills = () => {
                     })
                 }
             </div>
-            <Chart
-                options={options}
-                series={[{
-                    name: "Skills",
-                    data: skills.map(obj => obj.percentage)
-                }]}
-                type='radar'
-            />
+            {(typeof window !== 'undefined') &&
+                <Chart
+                    options={options}
+                    series={[{
+                        name: "Skills",
+                        data: skills.map(obj => obj.percentage)
+                    }]}
+                    type='radar'
+                />
+            }
         </div>
     )
 }
