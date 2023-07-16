@@ -1,20 +1,9 @@
-import {
-  FaHome,
-  FaUser,
-  FaFolderOpen,
-  FaEnvelopeOpen,
-  FaBriefcase,
-  FaGraduationCap,
-  FaCode,
-} from 'react-icons/fa';
+import { FaHome, FaUser, FaFolderOpen, FaEnvelopeOpen, FaBriefcase, FaGraduationCap, FaCode, FaCss3Alt, FaReact, FaPuzzlePiece } from 'react-icons/fa';
 import { FiFileText, FiUser, FiExternalLink } from 'react-icons/fi';
-
-import Work1 from '../public/assets/project-1.jpeg';
-import Work2 from '../public/assets/project-2.jpg';
-import Work3 from '../public/assets/project-3.jpeg';
-import Work4 from '../public/assets/project-4.jpeg';
-import Work5 from '../public/assets/project-5.jpg';
-import Work6 from '../public/assets/project-6.jpg';
+import { VscGithub } from 'react-icons/vsc'
+import { AiFillHtml5 } from 'react-icons/ai'
+import { TbBrandJavascript } from 'react-icons/tb'
+import { SiNextdotjs } from 'react-icons/si'
 
 import Theme1 from '../public/assets/purple.png';
 import Theme2 from '../public/assets/red.png';
@@ -27,7 +16,7 @@ import Theme8 from '../public/assets/orange.png';
 import Theme9 from '../public/assets/green.png';
 import Theme10 from '../public/assets/yellow.png';
 
-let getAge = () =>{
+let getAge = () => {
   const currentYear = new Date().getFullYear();
   const age = currentYear - 1999;
   return `${age} Years`;
@@ -130,111 +119,117 @@ export const resume = [
     id: 1,
     category: 'experience',
     icon: <FaBriefcase />,
-    year: '2018 - PRESENT',
-    title: 'Web Developer <span> Envato </span>',
-    desc: 'Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,',
+    year: '01/2022 - PRESENT',
+    title: 'React Developer <span> Intuio </span>',
+    desc: 'In my development work, I was building functional UIs with React, utilizing Socket.io for real-time updates. Redux for effective state management. Implemented various features like dynamic console logs, user detection, resizable components, search highlighting, auto-completion, mapping, Stripe integration, shortcut keys, and multi-tab UI.',
   },
-
   {
     id: 2,
     category: 'experience',
     icon: <FaBriefcase />,
-    year: '2013 - 2018',
-    title: 'UI/UX Designer <span> Themeforest </span>',
-    desc: 'Lorem incididunt dolor sit amet, consectetur eiusmod dunt doldunt dol elit, tempor incididunt',
+    year: '12/2021 - 01/2022',
+    title: 'React Developer <span> Kamsoft </span>',
+    desc: 'Built car listing UI and filters using React functional components. Utilized Ant Design for dashboard forms and tables. Developed PHP APIs for data retrieval from the database. Implemented Redux for efficient state management.',
   },
-
   {
     id: 3,
     category: 'experience',
     icon: <FaBriefcase />,
-    year: '2005 - 2013',
-    title: 'Consultant <span> Videohive </span>',
-    desc: 'Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed do eiusmod tempor duntt',
+    year: '07/2021 - 12/2021',
+    title: 'React Developer <span> ProGrad </span>',
+    desc: 'Developed multiple projects using React. Integrated covid19india.org API using Axios for a Covid19 dashboard. Implemented hooks and states for projects like mini-cake-builder and quiz app.',
   },
-
+  {
+    id: 7,
+    category: 'experience',
+    icon: <FaBriefcase />,
+    year: '08/2019 - 12/2019',
+    title: 'Frontend Developer <span> Crocs & Cops  </span>',
+    desc: "Utilized HTML, CSS, and Bootstrap to design and develop the entire website's user interface. Employed JavaScript and jQuery to enhance interactivity, such as implementing gallery image functionalities and form validations. Ensured a seamless user experience through responsive and visually appealing designs.",
+  },
   {
     id: 4,
     category: 'education',
     icon: <FaGraduationCap />,
-    year: '2015',
-    title: 'Engineering Degree <span> Oxford University </span>',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor incididunt ut labore',
+    year: '2022',
+    title: 'M.C.A <span> Vellore Institute of Technology </span>',
+    desc: '90%',
   },
-
   {
     id: 5,
     category: 'education',
     icon: <FaGraduationCap />,
-    year: '2012',
-    title: 'Master Degree <span> KIEV University </span>',
-    desc: 'Lorem incididunt dolor sit amet, consectetur eiusmod dunt doldunt dol elit, tempor incididunt',
+    year: '2020',
+    title: 'B.C.A <span> M.E.S College of Arts and Commerce </span>',
+    desc: '89.8%',
   },
-
   {
     id: 6,
     category: 'education',
     icon: <FaGraduationCap />,
-    year: '2009',
-    title: 'Bachelor Degree <span> Tunis High School </span>',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore',
+    year: '2017',
+    title: 'Computer Technique <span> M.E.S College of Arts and Commerce </span>',
+    desc: '67%',
+  },
+  {
+    id: 8,
+    category: 'education',
+    icon: <FaGraduationCap />,
+    year: '2015',
+    title: 'School <span> Vidya Mandir Secondary High School </span>',
+    desc: '61.3%',
   },
 ];
 
 export const skills = [
   {
     id: 1,
-    title: 'Html',
-    percentage: '25',
+    title: 'HTML',
+    percentage: '95',
+    iconB: <AiFillHtml5 className='skillsIcoB4' />,
+    iconA: <AiFillHtml5 className='skillsIcoAf' />
   },
-
   {
     id: 2,
-    title: 'Javascript',
-    percentage: '89',
+    title: 'CSS',
+    percentage: '90',
+    iconB: <FaCss3Alt className='skillsIcoB4' />,
+    iconA: <FaCss3Alt className='skillsIcoAf' />
   },
-
   {
     id: 3,
-    title: 'Css',
-    percentage: '70',
+    title: 'JAVASCRIPT',
+    percentage: '65',
+    iconB: <TbBrandJavascript className='skillsIcoB4' />,
+    iconA: <TbBrandJavascript className='skillsIcoAf' />
   },
-
   {
     id: 4,
-    title: 'Php',
-    percentage: '66',
+    title: 'REACT JS',
+    percentage: '75',
+    iconB: <FaReact className='skillsIcoB4' />,
+    iconA: <FaReact className='skillsIcoAf' />
   },
-
   {
     id: 5,
-    title: 'Wordpress',
-    percentage: '95',
+    title: 'NEXT JS',
+    percentage: '55',
+    iconB: <SiNextdotjs className='skillsIcoB4' />,
+    iconA: <SiNextdotjs className='skillsIcoAf' />
   },
-
   {
     id: 6,
-    title: 'Jquery',
-    percentage: '50',
-  },
-
-  {
-    id: 7,
-    title: 'Angular',
-    percentage: '65',
-  },
-
-  {
-    id: 8,
-    title: 'React',
-    percentage: '45',
+    title: 'GITHUB',
+    percentage: '55',
+    iconB: <VscGithub className='skillsIcoB4' />,
+    iconA: <VscGithub className='skillsIcoAf' />
   },
 ];
 
 export const portfolio = [
   {
     id: 1,
-    img: Work1,
+    img: "../assets/project-1.jpeg",
     title: 'Photo Editing',
     details: [
       {
@@ -243,9 +238,9 @@ export const portfolio = [
         desc: 'Photo',
       },
       {
-        icon: <FiUser />,
-        title: 'Client : ',
-        desc: 'Dribble',
+        icon: <FaPuzzlePiece />,
+        title: 'Type : ',
+        desc: 'Image',
       },
       {
         icon: <FaCode />,
@@ -262,7 +257,7 @@ export const portfolio = [
 
   {
     id: 2,
-    img: Work2,
+    img:"../assets/project-1.jpeg",
     title: 'Website Design',
     details: [
       {
@@ -290,7 +285,7 @@ export const portfolio = [
 
   {
     id: 3,
-    img: Work3,
+    img: "../assets/project-1.jpeg",
     title: 'Video Editing',
     details: [
       {
@@ -318,7 +313,7 @@ export const portfolio = [
 
   {
     id: 4,
-    img: Work4,
+    img: "../assets/project-1.jpeg",
     title: 'Video Editing',
     details: [
       {
@@ -346,7 +341,7 @@ export const portfolio = [
 
   {
     id: 5,
-    img: Work5,
+    img: "../assets/project-1.jpeg",
     title: 'Landing Page',
     details: [
       {
@@ -370,7 +365,7 @@ export const portfolio = [
 
   {
     id: 6,
-    img: Work6,
+    img: "../assets/project-1.jpeg",
     title: 'Photo Editing',
     details: [
       {

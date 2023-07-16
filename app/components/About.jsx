@@ -1,12 +1,25 @@
 "use client";
-import React from 'react'
+import React, { useState } from 'react'
 import Info from './Info';
 import { FaDownload } from 'react-icons/fa';
 import ImageStack from './ImageStack';
+import Skills from './Skills';
+import { resume } from '../data';
+import ResumeItem from './ResumeItem';
 
 const About = () => {
+    const [scrollPosition, setScrollPosition] = useState(0);
+    let rafId = null;
+
+    const handleScroll = (event) => {
+        cancelAnimationFrame(rafId); // Cancel previous animation frame
+        rafId = requestAnimationFrame(() => {
+            setScrollPosition(event.target.scrollTop);
+        });
+    };
+
     return (
-        <main className="section container">
+        <main onScroll={handleScroll} className="section container">
             <section className="about">
                 <h2 className="section__title">About <span>Me</span></h2>
                 <div className="about__container grid">
@@ -23,6 +36,45 @@ const About = () => {
                     </div>
                 </div>
             </section>
+
+            <div className="seperator"></div>
+
+            <section className="skills">
+                <h3 className="section__subtitle subtitle__center">My Skills</h3>
+
+                <div className="skills_container">
+                    <Skills />
+                </div>
+            </section>
+
+            <div className="seperator"></div>
+
+            <section className="resume">
+                <h3 className="section__subtitle subtitle__center">Experience & Education</h3>
+
+                <div className="resume__container grid">
+                    <div className="resume__data">
+                        {
+                            resume.map((ele, ind) => {
+                                if (ele.category == 'experience') {
+                                    return <ResumeItem key={ind} {...ele} />
+                                }
+                            })
+                        }
+                    </div>
+
+                    <div className="resume__data">
+                        {
+                            resume.map((ele, ind) => {
+                                if (ele.category == 'education') {
+                                    return <ResumeItem key={ind} {...ele} />
+                                }
+                            })
+                        }
+                    </div>
+                </div>
+            </section>
+
         </main>
     )
 }
