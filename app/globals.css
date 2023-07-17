@@ -8,6 +8,7 @@
   --container-color: hsl(0, 0%, 93%);
   --border-color: hsl(0, 0%, 87%);
   --text-white: #fff;
+  --clr: #222327;
 
   --body-font: 'Open Sans', sans-serif;
   --second-font: 'Poppins', sans-serif;
@@ -81,6 +82,7 @@ img {
 .grid {
   display: grid;
   gap: 30px;
+  position: relative;
 }
 
 .section {
@@ -575,6 +577,313 @@ img {
 }
 
 /* ---------------------------------------------------- ImageStack End ---------------------------------------------------- */
+
+/* ---------------------------------------------------- Projects ---------------------------------------------------- */
+
+.portfolio__container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.portfolio__item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.portfolio__img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.portfolio__hover {
+  background-color: var(--first-color);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: .5s ease;
+  cursor: pointer;
+}
+
+.portfolio__title {
+  color: var(--text-white);
+  font-size: var(--large-font-size);
+  font-weight: var(--weight-500);
+  transition: .5s ease;
+  transform: scale(0);
+}
+
+.portfolio__modal {
+  position: fixed;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, 0.7);
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 15px;
+}
+
+.portfolio__modal-content {
+  background-color: var(--container-color);
+  max-width: 650px;
+  width: 100%;
+  padding: 32px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal__close {
+  width: 50px;
+  position: absolute;
+  top: -3.5%;
+  right: -8.5%;
+  height: 50px;
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.modal__title {
+  text-align: center;
+  color: var(--first-color);
+  font-size: var(--h2-font-size);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.modal__list {
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 10px;
+  margin-bottom: 24px;
+}
+
+.modal__item {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.item__icon {
+  display: flex;
+}
+
+.item__title,
+.item__details {
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+}
+
+.item__title {
+  font-weight: var(--weight-600);
+}
+
+
+.span_item {
+  grid-column: 1 / span 2;
+}
+
+.item__details {
+  font-weight: var(--weight-500);
+}
+
+.modal__img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.project {
+  height: 250px;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+
+.project img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.project_hover_item {
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  bottom: 0;
+  transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-radius: 62% 56% 0% 0% / 33% 35% 10% 25%;
+  backdrop-filter: blur(10px) brightness(.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview {
+  color: var(--first-color);
+  cursor: pointer;
+}
+
+.project:hover .project_hover_item {
+  height: 70%;
+}
+
+.project:hover .portfolio__title {
+  transform: scale(1);
+}
+
+.project_selected {
+  transform: scale(1.5);
+}
+
+/* ---------------------------------------------------- Projects End ---------------------------------------------------- */
+
+/* ---------------------------------------------------- Filter ---------------------------------------------------- */
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  padding: 15px;
+}
+
+.navigation {
+  width: 550px;
+  height: 70px;
+  background: var(--container-color);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.navigation ul {
+  display: flex;
+  width: 500px;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: .5s;
+  color: var(--clr);
+}
+
+.navigation ul li.active a .icon {
+  transform: translateY(-33px);
+  color: var(--text-white);
+}
+
+.navigation ul li a .text {
+  position: absolute;
+  color: var(--clr);
+  font-weight: var(--weight-400);
+  font-size: 0.75em;
+  letter-spacing: .05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.indicator {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: var(--first-color);
+  top: -50%;
+  border-radius: 50%;
+  border: 6px solid var(--body-color);
+  transition: .5s;
+}
+
+.indicator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  top: 50%;
+  left: -22px;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--body-color);
+}
+
+.indicator::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  top: 50%;
+  right: -22px;
+  border-top-left-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--body-color);
+}
+
+.navigation ul li:nth-child(1).active~.indicator {
+  transform: translateX(calc(70px * 0));
+}
+
+.navigation ul li:nth-child(2).active~.indicator {
+  transform: translateX(calc(70px * 1));
+}
+
+.navigation ul li:nth-child(3).active~.indicator {
+  transform: translateX(calc(70px * 2));
+}
+
+.navigation ul li:nth-child(4).active~.indicator {
+  transform: translateX(calc(70px * 3));
+}
+
+.navigation ul li:nth-child(5).active~.indicator {
+  transform: translateX(calc(70px * 4));
+}
+
+.navigation ul li:nth-child(6).active~.indicator {
+  transform: translateX(calc(70px * 5));
+}
+
+.navigation ul li:nth-child(7).active~.indicator {
+  transform: translateX(calc(70px * 6));
+}
+
+/* ---------------------------------------------------- Filter End ---------------------------------------------------- */
 
 /* ---------------------------------------------------- Responsive ---------------------------------------------------- */
 

@@ -229,155 +229,10 @@ export const skills = [
 export const portfolio = [
   {
     id: 1,
-    img: "../assets/project-1.jpeg",
+    img: "../assets/proj1.png",
     title: 'Photo Editing',
+    category: "vanilla",
     details: [
-      {
-        icon: <FiFileText />,
-        title: 'Project : ',
-        desc: 'Photo',
-      },
-      {
-        icon: <FaPuzzlePiece />,
-        title: 'Type : ',
-        desc: 'Image',
-      },
-      {
-        icon: <FaCode />,
-        title: 'Language : ',
-        desc: 'Adobe Photoshop',
-      },
-      {
-        icon: <FiExternalLink />,
-        title: 'Preview : ',
-        desc: 'www.dribble.com',
-      },
-    ],
-  },
-
-  {
-    id: 2,
-    img:"../assets/project-1.jpeg",
-    title: 'Website Design',
-    details: [
-      {
-        icon: <FiFileText />,
-        title: 'Project : ',
-        desc: 'Website',
-      },
-      {
-        icon: <FiUser />,
-        title: 'Client : ',
-        desc: 'Dribble',
-      },
-      {
-        icon: <FaCode />,
-        title: 'Language : ',
-        desc: 'React JS',
-      },
-      {
-        icon: <FiExternalLink />,
-        title: 'Preview : ',
-        desc: 'www.dribble.com',
-      },
-    ],
-  },
-
-  {
-    id: 3,
-    img: "../assets/project-1.jpeg",
-    title: 'Video Editing',
-    details: [
-      {
-        icon: <FiFileText />,
-        title: 'Project : ',
-        desc: 'Video',
-      },
-      {
-        icon: <FiUser />,
-        title: 'Client : ',
-        desc: 'Dribble',
-      },
-      {
-        icon: <FaCode />,
-        title: 'Language : ',
-        desc: 'Adobe Premium',
-      },
-      {
-        icon: <FiExternalLink />,
-        title: 'Preview : ',
-        desc: 'www.dribble.com',
-      },
-    ],
-  },
-
-  {
-    id: 4,
-    img: "../assets/project-1.jpeg",
-    title: 'Video Editing',
-    details: [
-      {
-        icon: <FiFileText />,
-        title: 'Project : ',
-        desc: 'Video',
-      },
-      {
-        icon: <FiUser />,
-        title: 'Client : ',
-        desc: 'Dribble',
-      },
-      {
-        icon: <FaCode />,
-        title: 'Language : ',
-        desc: 'Adobe Premium',
-      },
-      {
-        icon: <FiExternalLink />,
-        title: 'Preview : ',
-        desc: 'www.dribble.com',
-      },
-    ],
-  },
-
-  {
-    id: 5,
-    img: "../assets/project-1.jpeg",
-    title: 'Landing Page',
-    details: [
-      {
-        title: 'Project : ',
-        desc: 'Website',
-      },
-      {
-        title: 'Client : ',
-        desc: 'Dribble',
-      },
-      {
-        title: 'Language : ',
-        desc: 'React JS, Node JS',
-      },
-      {
-        title: 'Preview : ',
-        desc: 'www.dribble.com',
-      },
-    ],
-  },
-
-  {
-    id: 6,
-    img: "../assets/project-1.jpeg",
-    title: 'Photo Editing',
-    details: [
-      {
-        icon: <FiFileText />,
-        title: 'Project : ',
-        desc: 'Photo',
-      },
-      {
-        icon: <FiUser />,
-        title: 'Client : ',
-        desc: 'Dribble',
-      },
       {
         icon: <FaCode />,
         title: 'Language : ',
@@ -387,6 +242,155 @@ export const portfolio = [
         icon: <FiExternalLink />,
         title: 'Preview : ',
         desc: 'www.dibble.com',
+      },
+      {
+        icon: '',
+        title: '',
+        desc: "An online market with login/Reg using localStorage(), Form validation using regex, Toast notifications, Search bar, Filters, Item's data fetched using mock API, Dark/Light theme & a soft neumorphic design",
+      },
+    ]
+  },
+
+  {
+    id: 1,
+    img: "../assets/project-1.jpeg",
+    title: 'Photo Editing',
+    category: "vanilla",
+    details: [
+      {
+        icon: <FaCode />,
+        title: 'Language : ',
+        desc: 'Adobe Photoshop',
+      },
+      {
+        icon: <FiExternalLink />,
+        title: 'Preview : ',
+        desc: 'www.dibble.com',
+      },
+      {
+        icon: '',
+        title: '',
+        desc: "An online market with login/Reg using localStorage(), Form validation using regex, Toast notifications, Search bar, Filters, Item's data fetched using mock API, Dark/Light theme & a soft neumorphic design",
+      },
+    ]
+  },
+
+  {
+    id: 2,
+    img: "../assets/project-2.jpg",
+    title: 'Website Design',
+    category: "react",
+    details: [
+      {
+        icon: <FaCode />,
+        title: 'Language : ',
+        desc: 'Adobe Photoshop',
+      },
+      {
+        icon: <FiExternalLink />,
+        title: 'Preview : ',
+        desc: 'www.dibble.com',
+      },
+      {
+        icon: '',
+        title: '',
+        desc: "An online market with login/Reg using localStorage(), Form validation using regex, Toast notifications, Search bar, Filters, Item's data fetched using mock API, Dark/Light theme & a soft neumorphic design",
+      },
+    ]
+  },
+
+  {
+    id: 3,
+    img: "../assets/project-3.jpeg",
+    title: 'Video Editing',
+    category: "next",
+    details: [
+      {
+        icon: <FaCode />,
+        title: 'Language : ',
+        desc: 'Adobe Photoshop',
+      },
+      {
+        icon: <FiExternalLink />,
+        title: 'Preview : ',
+        desc: 'www.dibble.com',
+      },
+      {
+        icon: '',
+        title: '',
+        desc: "An online market with login/Reg using localStorage(), Form validation using regex, Toast notifications, Search bar, Filters, Item's data fetched using mock API, Dark/Light theme & a soft neumorphic design",
+      },
+    ]
+  },
+
+  {
+    id: 4,
+    img: "../assets/project-4.jpeg",
+    title: 'Video Editing',
+    category: "unity",
+    details: [
+      {
+        icon: <FaCode />,
+        title: 'Language : ',
+        desc: 'Adobe Photoshop',
+      },
+      {
+        icon: <FiExternalLink />,
+        title: 'Preview : ',
+        desc: 'www.dibble.com',
+      },
+      {
+        icon: '',
+        title: '',
+        desc: "An online market with login/Reg using localStorage(), Form validation using regex, Toast notifications, Search bar, Filters, Item's data fetched using mock API, Dark/Light theme & a soft neumorphic design",
+      },
+    ]
+  },
+
+  {
+    id: 5,
+    img: "../assets/project-5.jpg",
+    title: 'Landing Page',
+    category: "android",
+    details: [
+      {
+        icon: <FaCode />,
+        title: 'Language : ',
+        desc: 'Adobe Photoshop',
+      },
+      {
+        icon: <FiExternalLink />,
+        title: 'Preview : ',
+        desc: 'www.dibble.com',
+      },
+      {
+        icon: '',
+        title: '',
+        desc: "An online market with login/Reg using localStorage(), Form validation using regex, Toast notifications, Search bar, Filters, Item's data fetched using mock API, Dark/Light theme & a soft neumorphic design",
+      },
+    ]
+  },
+
+  {
+    id: 6,
+    img: "../assets/project-6.jpg",
+    title: 'Photo Editing',
+    category: "photoshop",
+    details: [
+      {
+        icon: <FaCode />,
+        title: 'Language : ',
+        desc: 'Adobe Photoshop',
+      },
+      {
+        icon: <FiExternalLink />,
+        title: 'Preview : ',
+        desc: 'www.dibble.com',
+      },
+      {
+        icon: '',
+        title: '',
+        desc: "An online market with login/Reg using localStorage(), Form validation using regex, Toast notifications, Search bar, Filters, Item's data fetched using mock API, Dark/Light theme & a soft neumorphic design",
       },
     ],
   },
