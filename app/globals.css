@@ -904,6 +904,7 @@ img {
     right: 30px;
     display: flex;
     align-items: center;
+    z-index: 5;
   }
 
   .nav__icon {
