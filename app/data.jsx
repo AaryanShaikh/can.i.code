@@ -1,20 +1,9 @@
-import { FaHome, FaUser, FaFolderOpen, FaEnvelopeOpen, FaBriefcase, FaGraduationCap, FaCode, FaCss3Alt, FaReact, FaPuzzlePiece } from 'react-icons/fa';
-import { FiFileText, FiUser, FiExternalLink } from 'react-icons/fi';
+import { FaHome, FaUser, FaFolderOpen, FaEnvelopeOpen, FaBriefcase, FaGraduationCap, FaCode, FaCss3Alt, FaReact } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 import { VscGithub } from 'react-icons/vsc'
 import { AiFillHtml5 } from 'react-icons/ai'
 import { TbBrandJavascript } from 'react-icons/tb'
 import { SiNextdotjs } from 'react-icons/si'
-
-import Theme1 from '../public/assets/purple.png';
-import Theme2 from '../public/assets/red.png';
-import Theme3 from '../public/assets/blueviolet.png';
-import Theme4 from '../public/assets/blue.png';
-import Theme5 from '../public/assets/goldenrod.png';
-import Theme6 from '../public/assets/magenta.png';
-import Theme7 from '../public/assets/yellowgreen.png';
-import Theme8 from '../public/assets/orange.png';
-import Theme9 from '../public/assets/green.png';
-import Theme10 from '../public/assets/yellow.png';
 
 let getAge = () => {
   const currentYear = new Date().getFullYear();
@@ -1864,61 +1853,61 @@ export const portfolio = [
 export const themes = [
   {
     id: 1,
-    img: Theme1,
+    img: "../assets/purple.png",
     color: 'hsl(252, 35%, 51%)',
   },
 
   {
     id: 2,
-    img: Theme2,
+    img: "../assets/red.png",
     color: 'hsl(4, 93%, 54%)',
   },
 
   {
     id: 3,
-    img: Theme3,
+    img: "../assets/blueviolet.png",
     color: 'hsl(271, 76%, 53%)',
   },
 
   {
     id: 4,
-    img: Theme4,
+    img: "../assets/blue.png",
     color: 'hsl(225, 73%, 57%)',
   },
 
   {
     id: 5,
-    img: Theme5,
+    img: "../assets/goldenrod.png",
     color: 'hsl(43, 74%, 49%)',
   },
 
   {
     id: 6,
-    img: Theme6,
+    img: "../assets/magenta.png",
     color: 'hsl(339, 81%, 66%)',
   },
 
   {
     id: 7,
-    img: Theme7,
+    img: "../assets/yellowgreen.png",
     color: 'hsl(80, 61%, 50%)',
   },
 
   {
     id: 8,
-    img: Theme8,
+    img: "../assets/orange.png",
     color: 'hsl(19, 96%, 52%)',
   },
 
   {
     id: 9,
-    img: Theme9,
+    img: "../assets/green.png",
     color: 'hsl(88, 65%, 43%)',
   },
 
   {
     id: 10,
-    img: Theme10,
+    img: "../assets/yellow.png",
     color: 'hsl(42, 100%, 50%)',
   },
 ];
