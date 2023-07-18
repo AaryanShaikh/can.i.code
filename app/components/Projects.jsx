@@ -36,25 +36,27 @@ const Projects = () => {
       <div className="filter-container container">
         <div className="navigation">
           <ul>
-            <li className="list active">
+            <li className="list active" data-filter="all">
               <a href="" onClick={(e) => { handleClick(e, "all") }}>
-                <span className="icon"><HiOutlineSquares2X2 /></span>
+                <span className="icon">
+                  <span><HiOutlineSquares2X2 /></span>
+                </span>
                 <span className="text">All</span>
               </a>
             </li>
-            <li className="list">
+            <li className="list" data-filter=".web">
               <a href="" onClick={(e) => { handleClick(e, "vanilla") }}>
                 <span className="icon"><TbBrandJavascript /></span>
                 <span className="text">Vanilla</span>
               </a>
             </li>
-            <li className="list">
+            <li className="list" data-filter=".flyers">
               <a href="" onClick={(e) => { handleClick(e, "react") }}>
                 <span className="icon"><FaReact /></span>
                 <span className="text">React</span>
               </a>
             </li>
-            <li className="list">
+            <li className="list" data-filter=".bcards">
               <a href="" onClick={(e) => { handleClick(e, "next") }}>
                 <span className="icon"><SiNextdotjs /></span>
                 <span className="text">Next</span>
@@ -72,7 +74,7 @@ const Projects = () => {
                 <span className="text">Android</span>
               </a>
             </li>
-            <li className="list">
+            <li className="list" >
               <a href="" onClick={(e) => { handleClick(e, "photoshop") }}>
                 <span className="icon"><SiAdobephotoshop /></span>
                 <span className="text">Photoshop</span>
@@ -85,19 +87,15 @@ const Projects = () => {
         </div>
       </div>
 
-      <motion.div
-        layout
-        className="portfolio__container container grid"
-      >
+      <motion.div layout className="portfolio__container container grid">
         <AnimatePresence>
           {
             filterData.map((ele, ind) => {
-              return <Project key={ind} {...ele} />
+              return <Project key={ele.id} {...ele} />
             })
           }
         </AnimatePresence>
       </motion.div>
-
 
 
     </section>

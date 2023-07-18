@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 
-const Project = ({ img, title, details }) => {
+const Project = ({ img, title, details, link }) => {
     const [value, setValue] = useState(0);
     const [modal, setmodal] = useState(false)
 
@@ -30,8 +30,8 @@ const Project = ({ img, title, details }) => {
     return (
         <motion.div
             layout
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0, }}
         >
             <div
@@ -62,7 +62,7 @@ const Project = ({ img, title, details }) => {
 
                                         <div>
                                             <span className="item__title">{ele.title}</span>
-                                            <span style={{ fontWeight: ele.title == "" ? "400" : "" }} className={`item__details ${ele.title == "Preview : " ? "preview" : ""}`}>{ele.desc}</span>
+                                            <span onClick={() => { window.open(link, '_blank') }} style={{ fontWeight: ele.title == "" ? "400" : "" }} className={`item__details ${ele.title == "Preview : " ? "preview" : ""}`}>{ele.desc}</span>
                                         </div>
                                     </li>
                                 })}

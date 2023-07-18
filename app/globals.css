@@ -697,10 +697,11 @@ img {
 .project {
   height: 250px;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 1px;
   position: relative;
   cursor: pointer;
   transition: .5s ease-in-out;
+  box-shadow: 0px 0px 6px 1px #00000073;
 }
 
 .project img {
@@ -738,6 +739,47 @@ img {
 
 .project_selected {
   transform: scale(1.5);
+}
+
+.imgLoader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #121212;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgLoader .bar {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 10px;
+  animation: scale-up4 1s linear infinite;
+}
+
+.imgLoader .bar:nth-child(2) {
+  height: 35px;
+  margin: 0 5px;
+  animation-delay: .25s;
+}
+
+.imgLoader .bar:nth-child(3) {
+  animation-delay: .5s;
+}
+
+@keyframes scale-up4 {
+  20% {
+    background-color: #ffff;
+    transform: scaleY(1.5);
+  }
+
+  40% {
+    transform: scaleY(1);
+  }
 }
 
 /* ---------------------------------------------------- Projects End ---------------------------------------------------- */
