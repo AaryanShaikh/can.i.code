@@ -7,8 +7,10 @@ import ThemItem from './ThemItem'
 
 const getStorageColor = () => {
     let color = "hsl(252,35%,51%)";
-    if (localStorage.getItem('color')) {
-        color = localStorage.getItem('color')
+    if (typeof window !== 'undefined') {
+        if (localStorage.getItem('color')) {
+            color = localStorage.getItem('color')
+        }
     }
 
     return color;
@@ -16,8 +18,10 @@ const getStorageColor = () => {
 
 const getStorageTheme = () => {
     let theme = "dark-theme";
-    if (localStorage.getItem('theme')) {
-        theme = localStorage.getItem('theme')
+    if (typeof window !== 'undefined') {
+        if (localStorage.getItem('theme')) {
+            theme = localStorage.getItem('theme')
+        }
     }
 
     return theme;
@@ -37,13 +41,17 @@ const Themes = () => {
     }
 
     useEffect(() => {
-        document.documentElement.style.setProperty('--first-color', color)
-        localStorage.setItem('color', color)
+        if (typeof window !== 'undefined') {
+            document.documentElement.style.setProperty('--first-color', color)
+            localStorage.setItem('color', color)
+        }
     }, [color])
 
     useEffect(() => {
-        document.documentElement.className = theme
-        localStorage.setItem('theme', theme)
+        if (typeof window !== 'undefined') {
+            document.documentElement.className = theme
+            localStorage.setItem('theme', theme)
+        }
     }, [theme])
 
     return (
