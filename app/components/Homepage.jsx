@@ -42,7 +42,7 @@ const Homepage = () => {
                 <div className="home__data">
                     <h1 className="home__title"><span>I'm <span id='hacked'>Aaryan</span> Shaik.</span> Web Wizard</h1>
                     <p className="home__description">
-                        I am a web development wizard specializing in React and Next.js. With my spellbinding skills, I craft dynamic and responsive user interfaces that captivate and engage. My potions blend creativity, functionality, and performance to create enchanting web experiences. Join me on this magical journey as we unlock the secrets of React and Next.js!
+                        <span>I</span> a<span>m a web</span> development <span>wizard</span> specializing in React and Next.js. <span>With</span> my <span>spellbinding skills</span>, I craft dynamic and responsive user interfaces <span>that</span> captivate and engage. My potions <span>blend creativity</span>, functionality, and performance <span>to</span> create enchanting web experiences. Join me on this magical journey as we <span>unlock</span> the <span>secrets of React and Next.js!</span>
                     </p>
 
                     <Link onMouseOver={() => { setisColor(true) }} onMouseOut={() => { setisColor(false) }} href="/about" className='button'>More About me <span className='button__icon'><MdOutlineKeyboardDoubleArrowRight /></span></Link>

@@ -3,10 +3,10 @@ import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 import { skills } from '../data';
 import { SiNextdotjs } from 'react-icons/si'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
-const Skills = () => {
-    const [chartColor, setchartColor] = useState("#8A2CE2")
-
+const Skills = ({ themeColor }) => {
     const options = {
         chart: {
             id: "basic-bar"
@@ -23,7 +23,7 @@ const Skills = () => {
             dashArray: 0,
             curve: 'smooth',
             lineCap: "round",
-            colors: [chartColor]
+            colors: [themeColor]
         },
         fill: {
             opacity: 0
@@ -67,4 +67,12 @@ const Skills = () => {
     )
 }
 
-export default Skills
+Skills.propTypes = {
+
+}
+
+const mapStateToProps = (state) => ({
+    themeColor: state.theme.themeColor
+})
+
+export default connect(mapStateToProps, {})(Skills)

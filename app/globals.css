@@ -295,6 +295,7 @@ img {
 .home__description {
   line-height: 2.125;
   margin-block: 16px 32px;
+  transition: .5s ease;
 }
 
 .color__block {
@@ -306,6 +307,14 @@ img {
   left: -83%;
   transform: rotate(-15deg);
   transition: .5s ease;
+}
+
+.home__description:hover {
+  color: var(--container-color);
+}
+
+.home__description span {
+  color: var(--text-color);
 }
 
 /* ---------------------------------------------------- Homepage End ---------------------------------------------------- */
@@ -608,7 +617,7 @@ img {
   height: 11em;
   background: var(--body-color);
   z-index: -2;
-  box-shadow: inset 0px 0px 180px 5px #ffffff;
+  box-shadow: inset 0px 0px 180px 5px var(--body-color);
   transition: opacity 1s, border-radius .3s;
 }
 
@@ -625,9 +634,8 @@ img {
   width: 60px;
   height: 60px;
   border-top-left-radius: 10px;
-  background: lightgrey;
+  background: var(--body-color);
   transition: .3s ease, .15s background-color, .15s background-image ease-in-out;
-  background: rgba(255, 255, 255, 0.596);
   backdrop-filter: blur(5px);
   border: 1px solid transparent;
   -webkit-backdrop-filter: blur(5px);
@@ -745,7 +753,7 @@ img {
   border-radius: 10px;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--body-color);
 }
 
 .main:hover .card:nth-child(1) {
@@ -909,7 +917,7 @@ img {
   position: absolute;
   font-size: 0.7em;
   transition: .4s ease-in-out;
-  color: black;
+  color: var(--text-color);
   text-align: center;
   font-weight: bold;
   letter-spacing: 0.33em;
@@ -1269,7 +1277,7 @@ img {
   font-size: 1.5em;
   text-align: center;
   transition: .5s;
-  color: var(--clr);
+  color: var(--title-color);
 }
 
 .navigation ul li.active a .icon {
@@ -1279,7 +1287,7 @@ img {
 
 .navigation ul li a .text {
   position: absolute;
-  color: var(--clr);
+  color: var(--title-color);
   font-weight: var(--weight-400);
   font-size: 0.75em;
   letter-spacing: .05em;

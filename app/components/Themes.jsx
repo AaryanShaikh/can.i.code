@@ -4,6 +4,9 @@ import { themes } from '../data'
 import { FaCog } from 'react-icons/fa'
 import { BsSun, BsMoon } from 'react-icons/bs'
 import ThemItem from './ThemItem'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { handlethemeSelected, handlethemeStyleSelected } from '@/store/actions/theme'
 
 const getStorageColor = () => {
     let color = "hsl(252,35%,51%)";
@@ -27,7 +30,7 @@ const getStorageTheme = () => {
     return theme;
 }
 
-const Themes = () => {
+const Themes = ({ handlethemeSelected, handlethemeStyleSelected }) => {
     const [showSwitcher, setshowSwitcher] = useState(false)
     const [color, setcolor] = useState(getStorageColor());
     const [theme, settheme] = useState(getStorageTheme())
@@ -44,6 +47,7 @@ const Themes = () => {
         if (typeof window !== 'undefined') {
             document.documentElement.style.setProperty('--first-color', color)
             localStorage.setItem('color', color)
+            handlethemeSelected(color)
         }
     }, [color])
 
@@ -51,6 +55,7 @@ const Themes = () => {
         if (typeof window !== 'undefined') {
             document.documentElement.className = theme
             localStorage.setItem('theme', theme)
+            handlethemeStyleSelected(theme)
         }
     }, [theme])
 
@@ -75,4 +80,13 @@ const Themes = () => {
     )
 }
 
-export default Themes
+Themes.propTypes = {
+    handlethemeSelected: PropTypes.func.isRequired,
+    handlethemeStyleSelected: PropTypes.func.isRequired
+}
+
+const mapStateToProps = (state) => ({
+    themeColor: state.theme.themeColor
+})
+
+export default connect(mapStateToProps, { handlethemeSelected, handlethemeStyleSelected })(Themes)

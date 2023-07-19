@@ -8,8 +8,10 @@ import { FaReact, FaUnity } from 'react-icons/fa'
 import { SiAdobephotoshop, SiNextdotjs } from 'react-icons/si'
 import { AiFillAndroid } from 'react-icons/ai'
 import { motion, AnimatePresence } from "framer-motion"
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
-const Projects = () => {
+const Projects = ({ themeColor, themeStyle }) => {
   const [selFilter, setselFilter] = useState("all")
   const filterData = selFilter == "all" ? portfolio : portfolio.filter((x) => x.category == selFilter)
 
@@ -102,4 +104,13 @@ const Projects = () => {
   )
 }
 
-export default Projects
+Projects.propTypes = {
+
+}
+
+const mapStateToProps = (state) => ({
+  themeColor: state.theme.themeColor,
+  themeStyle: state.theme.themeStyle
+})
+
+export default connect(mapStateToProps, {})(Projects)
