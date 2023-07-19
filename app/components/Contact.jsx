@@ -1,70 +1,115 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import { BsInstagram, BsLinkedin, BsGithub, BsFillEnvelopeOpenFill, BsFillSendFill } from "react-icons/bs"
 import Socials from './Socials'
+import { AnimatePresence, motion } from 'framer-motion';
+import Loader from './Loader';
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { handleLoading } from '@/store/actions/theme';
+import { message } from 'antd';
 
-const Contact = () => {
+const Contact = ({ handleLoading, loading }) => {
+  const [conData, setconData] = useState({ name: "", email: "", message: "", subject: "" })
+  const [ismailsending, setismailsending] = useState(false)
+
+  useEffect(() => {
+    handleLoading(false)
+  }, [])
+
+  const onSendMessage = async () => {
+    setismailsending(true)
+    let res = await fetch("/api/contact", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(conData),
+    })
+    let result = await res.json()
+    if (result.status == "ok") {
+      message.success("I've recieved your message!")
+    } else {
+      message.error("An error occured!")
+    }
+    setismailsending(false)
+    setconData({ name: "", email: "", message: "", subject: "" })
+  }
+
   return (
     <section className="contact section">
+      <AnimatePresence>
+        {
+          loading ? <Loader /> : ""
+        }
+      </AnimatePresence>
       <h2 className="section__title">
         Get in <span>Touch</span>
       </h2>
 
       <div className="contact__container container grid">
-        <div className="contact__data">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, type: "spring", bounce: 0.6 }}
+          className="contact__data"
+        >
           <h3 className="contact__title">Don't be Shy !</h3>
           <p className="contact__description">
             Let's connect and create something extraordinary together! Feel free to reach out to me through any of the portals below. I'm just a message away from turning ideas into reality. Looking forward to hearing from you!
           </p>
 
-          {/* <div className="contact__info">
-            <div className="info__item">
-              <BsFillEnvelopeOpenFill className='info__icon' />
-              <div>
-                <span className="info__title">Mail me</span>
-                <h4 className="info__desc">aaryanshaikh27638@gmail.com</h4>
-              </div>
-            </div>
-          </div>
-
-          <div className="contact__socials">
-            <a href="" className="contact__social-link">
-              <BsInstagram />
-            </a>
-            <a href="" className="contact__social-link">
-              <BsLinkedin />
-            </a>
-            <a href="" className="contact__social-link">
-              <BsGithub />
-            </a>
-          </div> */}
-
           <Socials />
-        </div>
+        </motion.div>
 
-        <div className="contact__form">
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, type: "spring", bounce: 0.6 }}
+          className="contact__form"
+        >
           <div className="form__input-group">
             <div className="form__input-div">
-              <input type="text" placeholder='Your Name' className="form__control" />
+              <input type="text" value={conData.name} onChange={(e) => { setconData({ ...conData, "name": e.target.value }) }} placeholder='Your Name' className="form__control" />
             </div>
             <div className="form__input-div">
-              <input type="text" placeholder='Your Email' className="form__control" />
+              <input type="text" value={conData.email} onChange={(e) => { setconData({ ...conData, "email": e.target.value }) }} placeholder='Your Email' className="form__control" />
             </div>
             <div className="form__input-div">
-              <input type="text" placeholder='Your Subject' className="form__control" />
+              <input type="text" value={conData.subject} onChange={(e) => { setconData({ ...conData, "subject": e.target.value }) }} placeholder='Your Subject' className="form__control" />
             </div>
 
           </div>
           <div className="form__input-div">
-            <textarea placeholder='Your Messsage' className="form__control textarea" />
+            <textarea value={conData.message} onChange={(e) => { setconData({ ...conData, "message": e.target.value }) }} placeholder='Your Messsage' className="form__control textarea" />
           </div>
-          <button className='button'>
+          {/* <button className='button' onClick={onSendMessage}>
             Send Message
             <span className="button__icon contact__button-icon"><BsFillSendFill /></span>
+          </button> */}
+          <button onClick={onSendMessage} className={`sendBtn ${ismailsending ? "active" : ""}`}>
+            <div className="svg-wrapper-1">
+              <div className="svg-wrapper">
+                <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" fill="currentColor"></path>
+                </svg>
+              </div>
+            </div>
+            <span>Send</span>
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
 }
 
-export default Contact
+Contact.propTypes = {
+  handleLoading: PropTypes.func.isRequired
+}
+
+const mapStateToProps = (state) => ({
+  loading: state.theme.loading
+})
+
+export default connect(mapStateToProps, { handleLoading })(Contact)

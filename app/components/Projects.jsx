@@ -7,15 +7,20 @@ import { TbBrandJavascript } from 'react-icons/tb'
 import { FaReact, FaUnity } from 'react-icons/fa'
 import { SiAdobephotoshop, SiNextdotjs } from 'react-icons/si'
 import { AiFillAndroid } from 'react-icons/ai'
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useTransform, useViewportScroll } from "framer-motion"
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import Loader from './Loader'
+import { handleLoading } from '@/store/actions/theme'
 
-const Projects = ({ themeColor, themeStyle }) => {
+const Projects = ({ handleLoading, loading }) => {
   const [selFilter, setselFilter] = useState("all")
   const filterData = selFilter == "all" ? portfolio : portfolio.filter((x) => x.category == selFilter)
+  const { scrollY } = useViewportScroll();
+  const divOffsetY = useTransform(scrollY, [0, 200], [0, -200]);
 
   useEffect(() => {
+    handleLoading(false)
     const list = document.querySelectorAll('.list')
     function activeLink() {
       list.forEach((item) =>
@@ -33,10 +38,20 @@ const Projects = ({ themeColor, themeStyle }) => {
 
   return (
     <section className="portfolio section">
+      <AnimatePresence>
+        {
+          loading ? <Loader /> : ""
+        }
+      </AnimatePresence>
       <h2 className="section__title">My <span>Projects</span></h2>
 
       <div className="filter-container container">
-        <div className="navigation">
+        <motion.div
+          style={{
+            position: "fixed", y: divOffsetY, zIndex: "99",
+          }}
+          className="navigation"
+        >
           <ul>
             <li className="list active" data-filter="all">
               <a href="" onClick={(e) => { handleClick(e, "all") }}>
@@ -86,7 +101,7 @@ const Projects = ({ themeColor, themeStyle }) => {
 
             </div>
           </ul>
-        </div>
+        </motion.div>
       </div>
 
       <motion.div layout className="portfolio__container container grid">
@@ -105,12 +120,11 @@ const Projects = ({ themeColor, themeStyle }) => {
 }
 
 Projects.propTypes = {
-
+  handleLoading: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
-  themeColor: state.theme.themeColor,
-  themeStyle: state.theme.themeStyle
+  loading: state.theme.loading
 })
 
-export default connect(mapStateToProps, {})(Projects)
+export default connect(mapStateToProps, { handleLoading })(Projects)

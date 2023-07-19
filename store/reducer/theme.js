@@ -1,8 +1,9 @@
-import { THEME_COLOR, THEME_STYLE } from "../actions/types";
+import { LOADING, THEME_COLOR, THEME_STYLE } from "../actions/types";
 
 const initialState = {
     themeColor: "hsl(252, 35%, 51%)",
-    themeStyle: "dark-theme"
+    themeStyle: "dark-theme",
+    loading: true
 };
 
 export default function (state = initialState, action) {
@@ -15,10 +16,16 @@ export default function (state = initialState, action) {
                 themeColor: payload
             }
 
-            case THEME_STYLE:
+        case THEME_STYLE:
             return {
                 ...state,
                 themeStyle: payload
+            }
+
+        case LOADING:
+            return {
+                ...state,
+                loading: payload
             }
 
         default:

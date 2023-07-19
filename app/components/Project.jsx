@@ -2,43 +2,25 @@ import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 
 const Project = ({ img, title, details, link }) => {
-    const [value, setValue] = useState(0);
     const [modal, setmodal] = useState(false)
 
     const ontoggleModal = () => {
         setmodal(!modal)
     }
 
-    useEffect(() => {
-        let requestId;
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-            const totalScroll = documentHeight - windowHeight;
-            const scrollPercentage = (scrollPosition / totalScroll) * 100;
-            setValue(scrollPercentage);
-            requestId = requestAnimationFrame(handleScroll);
-        };
-        handleScroll();
-
-        return () => {
-            cancelAnimationFrame(requestId);
-        };
-    }, []);
-
     return (
         <motion.div
             layout
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, }}
+            transition={{ type: "spring", bounce: 0.25 }}
         >
             <div
                 className='project'
                 onClick={ontoggleModal}
             >
-                <img src={img} style={{ objectPosition: `50% ${value.toFixed(2)}%` }} />
+                <img src={img} />
                 <div className='project_hover_item'>
                     <h3 className="portfolio__title">{title}</h3>
                 </div>

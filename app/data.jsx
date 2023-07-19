@@ -231,7 +231,7 @@ export const portfolio = [
       {
         icon: <FiExternalLink />,
         title: 'Preview : ',
-        desc: 'www.github.com',
+        desc: 'bit.ly/AaryanMemoirs',
       },
       {
         icon: '',

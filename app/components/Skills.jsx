@@ -41,8 +41,8 @@ const Skills = ({ themeColor }) => {
     }
 
     return (
-        <div style={{ width: "100%", display: "grid", gridTemplateColumns: "repeat(2,1fr)", padding: "20px", alignItems: "center" }}>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+        <div className='skillCardsMain' style={{ width: "100%", display: "grid", gridTemplateColumns: "repeat(2,1fr)", padding: "20px", alignItems: "center" }}>
+            <div className='skillCards' style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
                 {
                     skills.map((ele, ind) => {
                         return <div className='skillsBx' key={ind} style={{ height: "150px", width: "150px", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", margin: 0, padding: 0, borderRadius: "5px", boxShadow: "0px 0px 8px 0px #00000026" }}>
