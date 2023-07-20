@@ -12,95 +12,109 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { handleLoading } from '@/store/actions/theme';
 
-const About = ({ handleLoading, loading }) => {
+const About = ({ handleLoading, loading, route }) => {
 
     useEffect(() => {
         handleLoading(false)
     }, [])
 
     return (
-        <main className="section container">
-            <AnimatePresence>
-                {
-                    loading ? <Loader /> : ""
-                }
-            </AnimatePresence>
-            <section className="about">
-                <h2 className="section__title">About <span>Me</span></h2>
-                <div className="about__container grid">
-                    <motion.div
-                        initial={{ opacity: 0, x: -100 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.5, type: "spring", bounce: 0.6 }}
-                        className="about__info"
-                    >
-                        <h3 className="section__subtitle">Personal Info</h3>
-                        <ul className="info__list grid">
-                            <Info />
-                        </ul>
-                        <a href="../../assets/aaryan-resume.pdf" download="aaryan-resume.pdf" className="button">Download CV <span className='button__icon'><FaDownload /></span></a>
-                    </motion.div>
+        <>
+            <div className='pageTransitionMain'>
+                <div className='pageTransitionText'><h1 style={{ opacity: loading ? 1 : 0 }}>{route}</h1></div>
+                <div
+                    className='pageTransitionLeft'
+                    style={{
+                        clipPath: loading ? "polygon(100% 0, 0 0, 0 100%, 100% 100%)" : "polygon(0 0, 0 0, 0 100%, 0 100%)",
+                        backdropFilter: loading ? "brightness(0)" : "brightness(1)"
+                    }}
+                ></div>
+                <div
+                    className='pageTransitionRight'
+                    style={{
+                        clipPath: loading ? "polygon(100% 0, 0 0, 0 100%, 100% 100%)" : "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
+                        backdropFilter: loading ? "brightness(0)" : "brightness(1)"
+                    }}
+                ></div>
+            </div>
+            <main className="section container">
+                <section className="about">
+                    <h2 className="section__title">About <span>Me</span></h2>
+                    <div className="about__container grid">
+                        <motion.div
+                            initial={{ opacity: 0, x: -100 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.5, type: "spring", bounce: 0.6 }}
+                            className="about__info"
+                        >
+                            <h3 className="section__subtitle">Personal Info</h3>
+                            <ul className="info__list grid">
+                                <Info />
+                            </ul>
+                            <a href="../../assets/aaryan-resume.pdf" download="aaryan-resume.pdf" className="button">Download CV <span className='button__icon'><FaDownload /></span></a>
+                        </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.3, type: "spring", bounce: 0.2 }}
-                        className="stats grid"
-                    >
-                        <ImageStack />
-                    </motion.div>
-                </div>
-            </section>
-
-            <div className="seperator"></div>
-
-            <motion.section
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5, type: "spring", bounce: 0.6 }}
-                className="skills"
-            >
-                <h3 className="section__subtitle subtitle__center">My Skills</h3>
-
-                <div className="skills_container">
-                    <Skills />
-                </div>
-            </motion.section>
-
-            <div className="seperator"></div>
-
-            <motion.section
-                initial={{ opacity: 0, x: -100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5, type: "spring", bounce: 0.6 }}
-                className="resume"
-            >
-                <h3 className="section__subtitle subtitle__center">Experience & Education</h3>
-
-                <div className="resume__container grid">
-                    <div className="resume__data">
-                        {
-                            resume.map((ele, ind) => {
-                                if (ele.category == 'experience') {
-                                    return <ResumeItem key={ind} {...ele} />
-                                }
-                            })
-                        }
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.3, type: "spring", bounce: 0.2 }}
+                            className="stats grid"
+                        >
+                            <ImageStack />
+                        </motion.div>
                     </div>
+                </section>
 
-                    <div className="resume__data">
-                        {
-                            resume.map((ele, ind) => {
-                                if (ele.category == 'education') {
-                                    return <ResumeItem key={ind} {...ele} />
-                                }
-                            })
-                        }
+                <div className="seperator"></div>
+
+                <motion.section
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5, type: "spring", bounce: 0.6 }}
+                    className="skills"
+                >
+                    <h3 className="section__subtitle subtitle__center">My Skills</h3>
+
+                    <div className="skills_container">
+                        <Skills />
                     </div>
-                </div>
-            </motion.section>
+                </motion.section>
 
-        </main>
+                <div className="seperator"></div>
+
+                <motion.section
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5, type: "spring", bounce: 0.6 }}
+                    className="resume"
+                >
+                    <h3 className="section__subtitle subtitle__center">Experience & Education</h3>
+
+                    <div className="resume__container grid">
+                        <div className="resume__data">
+                            {
+                                resume.map((ele, ind) => {
+                                    if (ele.category == 'experience') {
+                                        return <ResumeItem key={ind} {...ele} />
+                                    }
+                                })
+                            }
+                        </div>
+
+                        <div className="resume__data">
+                            {
+                                resume.map((ele, ind) => {
+                                    if (ele.category == 'education') {
+                                        return <ResumeItem key={ind} {...ele} />
+                                    }
+                                })
+                            }
+                        </div>
+                    </div>
+                </motion.section>
+
+            </main>
+        </>
     )
 }
 
@@ -109,7 +123,8 @@ About.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-    loading: state.theme.loading
+    loading: state.theme.loading,
+    route: state.theme.route
 })
 
 export default connect(mapStateToProps, { handleLoading })(About)

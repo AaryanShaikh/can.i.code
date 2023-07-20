@@ -1,4 +1,4 @@
-import { LOADING, THEME_COLOR, THEME_STYLE } from "./types";
+import { LOADING, ROUTE, THEME_COLOR, THEME_STYLE } from "./types";
 
 export const handlethemeSelected = (data) => (dispatch) => {
     try {
@@ -30,5 +30,16 @@ export const handleLoading = (data) => (dispatch) => {
         });
     } catch (err) {
         console.log('error in handleLoading', err);
+    }
+}
+
+export const handleRouteSelected = (data) => (dispatch) => {
+    try {
+        dispatch({
+            type: ROUTE,
+            payload: data
+        });
+    } catch (err) {
+        console.log('error in handleRouteSelected', err);
     }
 }

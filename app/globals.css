@@ -420,7 +420,7 @@ img {
 
 .skillsIcoB4,
 .skillsIcoAf {
-  transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
 }
 
 .skillsBx:hover .skillsIcoAf {
@@ -1628,9 +1628,49 @@ img {
   }
 }
 
-
-
 /* ---------------------------------------------------- Contact End ---------------------------------------------------- */
+
+/* ---------------------------------------------------- Page Transition ---------------------------------------------------- */
+
+.pageTransitionMain {
+  position: absolute;
+  height: 100%;
+  width: 101%;
+  z-index: 1000;
+  display: flex;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageTransitionLeft {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  transition: .7s ease;
+}
+
+.pageTransitionRight {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  transition: .7s ease;
+}
+
+.pageTransitionText {
+  position: absolute;
+  z-index: 1001;
+  font-family: 'Dancing Script', cursive;
+}
+
+.pageTransitionText h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  font-weight: 200;
+  transition: .8s ease;
+}
+
+/* ------------------------------------------------ Page Transition End ---------------------------------------------------- */
 
 /* ---------------------------------------------------- Responsive ---------------------------------------------------- */
 

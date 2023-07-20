@@ -6,10 +6,12 @@ import Loader from './Loader'
 import { AnimatePresence } from 'framer-motion'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { handleLoading } from '@/store/actions/theme'
+import { handleLoading, handleRouteSelected } from '@/store/actions/theme'
+import { useRouter } from 'next/navigation'
 
-const Homepage = ({ loading, handleLoading }) => {
+const Homepage = ({ loading, handleLoading, route, handleRouteSelected }) => {
     const [isColor, setisColor] = useState(false)
+    const router = useRouter()
 
     useEffect(() => {
         handleLoading(false)
@@ -42,13 +44,34 @@ const Homepage = ({ loading, handleLoading }) => {
         }, 30)
     }
 
-    return (
+    const onRouteChange = (e, path, name) => {
+        e.preventDefault()
+        handleLoading(true)
+        handleRouteSelected(name)
+        setTimeout(() => {
+            router.push(path)
+        }, 900);
+    }
+
+    return (<>
+        <div className='pageTransitionMain'>
+            <div className='pageTransitionText'><h1 style={{ opacity: loading ? 1 : 0 }}>{route}</h1></div>
+            <div
+                className='pageTransitionLeft'
+                style={{
+                    clipPath: loading ? "polygon(100% 0, 0 0, 0 100%, 100% 100%)" : "polygon(0 0, 0 0, 0 100%, 0 100%)",
+                    backdropFilter: loading ? "brightness(0)" : "brightness(1)"
+                }}
+            ></div>
+            <div
+                className='pageTransitionRight'
+                style={{
+                    clipPath: loading ? "polygon(100% 0, 0 0, 0 100%, 100% 100%)" : "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
+                    backdropFilter: loading ? "brightness(0)" : "brightness(1)"
+                }}
+            ></div>
+        </div>
         <section className="home section grid">
-            <AnimatePresence>
-                {
-                    loading ? <Loader /> : ""
-                }
-            </AnimatePresence>
             <img className='home__img' src='../assets/home.png' style={{ filter: `saturate(${isColor ? "1" : "0"})`, transition: ".3s ease-in-out" }} />
 
             <div className="home__content">
@@ -58,21 +81,24 @@ const Homepage = ({ loading, handleLoading }) => {
                         <span>I</span> a<span>m a web</span> development <span>wizard</span> specializing in React and Next.js. <span>With</span> my <span>spellbinding skills</span>, I craft dynamic and responsive user interfaces <span>that</span> captivate and engage. My potions <span>blend creativity</span>, functionality, and performance <span>to</span> create enchanting web experiences. Join me on this magical journey as we <span>unlock</span> the <span>secrets of React and Next.js!</span>
                     </p>
 
-                    <Link onClick={() => { handleLoading(true) }} onMouseOver={() => { setisColor(true) }} onMouseOut={() => { setisColor(false) }} href="/about" className='button'>More About me <span className='button__icon'><MdOutlineKeyboardDoubleArrowRight /></span></Link>
+                    <Link href="" onClick={(e) => { onRouteChange(e, "/about", "About") }} onMouseOver={() => { setisColor(true) }} onMouseOut={() => { setisColor(false) }} className='button'>More About me <span className='button__icon'><MdOutlineKeyboardDoubleArrowRight /></span></Link>
                 </div>
             </div>
 
             <div className="color__block"></div>
         </section>
+    </>
     )
 }
 
 Homepage.propTypes = {
     handleLoading: PropTypes.func.isRequired,
+    handleRouteSelected: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
-    loading: state.theme.loading
+    loading: state.theme.loading,
+    route: state.theme.route
 })
 
-export default connect(mapStateToProps, { handleLoading })(Homepage)
+export default connect(mapStateToProps, { handleLoading, handleRouteSelected })(Homepage)

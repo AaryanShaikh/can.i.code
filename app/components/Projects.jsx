@@ -13,7 +13,7 @@ import PropTypes from 'prop-types'
 import Loader from './Loader'
 import { handleLoading } from '@/store/actions/theme'
 
-const Projects = ({ handleLoading, loading }) => {
+const Projects = ({ handleLoading, loading, route }) => {
   const [selFilter, setselFilter] = useState("all")
   const filterData = selFilter == "all" ? portfolio : portfolio.filter((x) => x.category == selFilter)
   const { scrollY } = useViewportScroll();
@@ -37,85 +37,99 @@ const Projects = ({ handleLoading, loading }) => {
   };
 
   return (
-    <section className="portfolio section">
-      <AnimatePresence>
-        {
-          loading ? <Loader /> : ""
-        }
-      </AnimatePresence>
-      <h2 className="section__title">My <span>Projects</span></h2>
-
-      <div className="filter-container container">
-        <motion.div
+    <>
+      <div className='pageTransitionMain'>
+        <div className='pageTransitionText'><h1 style={{ opacity: loading ? 1 : 0 }}>{route}</h1></div>
+        <div
+          className='pageTransitionLeft'
           style={{
-            position: "fixed", y: divOffsetY, zIndex: "99",
+            clipPath: loading ? "polygon(100% 0, 0 0, 0 100%, 100% 100%)" : "polygon(0 0, 0 0, 0 100%, 0 100%)",
+            backdropFilter: loading ? "brightness(0)" : "brightness(1)"
           }}
-          className="navigation"
-        >
-          <ul>
-            <li className="list active" data-filter="all">
-              <a href="" onClick={(e) => { handleClick(e, "all") }}>
-                <span className="icon">
-                  <span><HiOutlineSquares2X2 /></span>
-                </span>
-                <span className="text">All</span>
-              </a>
-            </li>
-            <li className="list" data-filter=".web">
-              <a href="" onClick={(e) => { handleClick(e, "vanilla") }}>
-                <span className="icon"><TbBrandJavascript /></span>
-                <span className="text">Vanilla</span>
-              </a>
-            </li>
-            <li className="list" data-filter=".flyers">
-              <a href="" onClick={(e) => { handleClick(e, "react") }}>
-                <span className="icon"><FaReact /></span>
-                <span className="text">React</span>
-              </a>
-            </li>
-            <li className="list" data-filter=".bcards">
-              <a href="" onClick={(e) => { handleClick(e, "next") }}>
-                <span className="icon"><SiNextdotjs /></span>
-                <span className="text">Next</span>
-              </a>
-            </li>
-            <li className="list">
-              <a href="" onClick={(e) => { handleClick(e, "unity") }}>
-                <span className="icon"><FaUnity /></span>
-                <span className="text">Unity</span>
-              </a>
-            </li>
-            <li className="list">
-              <a href="" onClick={(e) => { handleClick(e, "android") }}>
-                <span className="icon"><AiFillAndroid /></span>
-                <span className="text">Android</span>
-              </a>
-            </li>
-            <li className="list" >
-              <a href="" onClick={(e) => { handleClick(e, "photoshop") }}>
-                <span className="icon"><SiAdobephotoshop /></span>
-                <span className="text">Photoshop</span>
-              </a>
-            </li>
-            <div className="indicator">
-
-            </div>
-          </ul>
-        </motion.div>
+        ></div>
+        <div
+          className='pageTransitionRight'
+          style={{
+            clipPath: loading ? "polygon(100% 0, 0 0, 0 100%, 100% 100%)" : "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
+            backdropFilter: loading ? "brightness(0)" : "brightness(1)"
+          }}
+        ></div>
       </div>
+      <section className="portfolio section">
+        <h2 className="section__title">My <span>Projects</span></h2>
 
-      <motion.div layout className="portfolio__container container grid">
-        <AnimatePresence>
-          {
-            filterData.map((ele, ind) => {
-              return <Project key={ele.id} {...ele} />
-            })
-          }
-        </AnimatePresence>
-      </motion.div>
+        <div className="filter-container container">
+          <motion.div
+            style={{
+              position: "fixed", y: divOffsetY, zIndex: "99",
+            }}
+            className="navigation"
+          >
+            <ul>
+              <li className="list active" data-filter="all">
+                <a href="" onClick={(e) => { handleClick(e, "all") }}>
+                  <span className="icon">
+                    <span><HiOutlineSquares2X2 /></span>
+                  </span>
+                  <span className="text">All</span>
+                </a>
+              </li>
+              <li className="list" data-filter=".web">
+                <a href="" onClick={(e) => { handleClick(e, "vanilla") }}>
+                  <span className="icon"><TbBrandJavascript /></span>
+                  <span className="text">Vanilla</span>
+                </a>
+              </li>
+              <li className="list" data-filter=".flyers">
+                <a href="" onClick={(e) => { handleClick(e, "react") }}>
+                  <span className="icon"><FaReact /></span>
+                  <span className="text">React</span>
+                </a>
+              </li>
+              <li className="list" data-filter=".bcards">
+                <a href="" onClick={(e) => { handleClick(e, "next") }}>
+                  <span className="icon"><SiNextdotjs /></span>
+                  <span className="text">Next</span>
+                </a>
+              </li>
+              <li className="list">
+                <a href="" onClick={(e) => { handleClick(e, "unity") }}>
+                  <span className="icon"><FaUnity /></span>
+                  <span className="text">Unity</span>
+                </a>
+              </li>
+              <li className="list">
+                <a href="" onClick={(e) => { handleClick(e, "android") }}>
+                  <span className="icon"><AiFillAndroid /></span>
+                  <span className="text">Android</span>
+                </a>
+              </li>
+              <li className="list" >
+                <a href="" onClick={(e) => { handleClick(e, "photoshop") }}>
+                  <span className="icon"><SiAdobephotoshop /></span>
+                  <span className="text">Photoshop</span>
+                </a>
+              </li>
+              <div className="indicator">
+
+              </div>
+            </ul>
+          </motion.div>
+        </div>
+
+        <motion.div layout className="portfolio__container container grid">
+          <AnimatePresence>
+            {
+              filterData.map((ele, ind) => {
+                return <Project key={ele.id} {...ele} />
+              })
+            }
+          </AnimatePresence>
+        </motion.div>
 
 
-    </section>
+      </section>
+    </>
   )
 }
 
@@ -124,7 +138,8 @@ Projects.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  loading: state.theme.loading
+  loading: state.theme.loading,
+  route: state.theme.route
 })
 
 export default connect(mapStateToProps, { handleLoading })(Projects)
