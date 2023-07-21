@@ -11,15 +11,40 @@ import Loader from './Loader';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { handleLoading } from '@/store/actions/theme';
+import { BiUpArrow } from 'react-icons/bi';
 
-const About = ({ handleLoading, loading, route }) => {
+const About = ({ handleLoading, loading, route, themeColor }) => {
+    const [showButton, setshowButton] = useState(false)
+    const [scrollPercentage, setscrollPercentage] = useState(0)
 
     useEffect(() => {
         handleLoading(false)
+        const handleScroll = () => {
+            if (window.scrollY > 300) {
+                setshowButton(true);
+            } else {
+                setshowButton(false);
+            }
+            const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / totalHeight) * 100;
+            setscrollPercentage(scrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, [])
+
+    const handleScrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     return (
         <>
+            <div id="progress" onClick={handleScrollToTop} style={{ background: `conic-gradient(${themeColor} ${Math.floor(scrollPercentage) + 1}%, transparent 0%)`, opacity: showButton ? "1" : "0" }}>
+                <span id="progress-value"><BiUpArrow /></span>
+            </div>
             <div className='pageTransitionMain'>
                 <div className='pageTransitionText'><h1 style={{ opacity: loading ? 1 : 0 }}>{route}</h1></div>
                 <div
@@ -124,7 +149,8 @@ About.propTypes = {
 
 const mapStateToProps = (state) => ({
     loading: state.theme.loading,
-    route: state.theme.route
+    route: state.theme.route,
+    themeColor: state.theme.themeColor
 })
 
 export default connect(mapStateToProps, { handleLoading })(About)

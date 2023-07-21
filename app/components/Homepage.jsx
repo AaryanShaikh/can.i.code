@@ -6,15 +6,37 @@ import Loader from './Loader'
 import { AnimatePresence } from 'framer-motion'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { handleLoading, handleRouteSelected } from '@/store/actions/theme'
+import { handleLoading, handleRouteSelected, handleIsIntro } from '@/store/actions/theme'
 import { useRouter } from 'next/navigation'
+import { SiAdobephotoshop, SiFramer, SiNextdotjs, SiRedux } from 'react-icons/si'
 
-const Homepage = ({ loading, handleLoading, route, handleRouteSelected }) => {
+const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIsIntro, isIntro }) => {
     const [isColor, setisColor] = useState(false)
     const router = useRouter()
+    const [introLoadText, setintroLoadText] = useState(0)
+    const [isLoadComplete, setisLoadComplete] = useState(false)
+    const [isLoadStart, setisLoadStart] = useState(true)
+    const [isLoad2Complete, setisLoad2Complete] = useState(false)
+    const [isLoad3Complete, setisLoad3Complete] = useState(false)
 
     useEffect(() => {
         handleLoading(false)
+        setTimeout(() => {
+            startAnimation()
+            setTimeout(() => {
+                setisLoadStart(false)
+                setisLoadComplete(true)
+                setTimeout(() => {
+                    setisLoad2Complete(true)
+                    setTimeout(() => {
+                        setisLoad3Complete(true)
+                        setTimeout(() => {
+                            handleIsIntro(false)
+                        }, 1000);
+                    }, 2000);
+                }, 2000);
+            }, 2000)
+        }, 1500)
         let interval = setInterval(() => {
             onNameChangeAutomatically()
         }, 3000)
@@ -53,7 +75,56 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected }) => {
         }, 900);
     }
 
+    const startAnimation = () => {
+        const animationDuration = 1500; // Duration of the animation in milliseconds
+        const interval = 10; // Time interval in milliseconds
+        const steps = 100; // Total number of steps from 0 to 100
+        const stepValue = 100 / steps; // Value increment for each step
+
+        let currentStep = 0;
+        const intervalId = setInterval(() => {
+            if (currentStep >= steps) {
+                clearInterval(intervalId);
+            } else {
+                setintroLoadText((currentStep + 1) * stepValue);
+                currentStep++;
+            }
+        }, animationDuration / steps);
+    };
+
     return (<>
+        {
+            isIntro ? <>
+                <div className='pageIntroMain' style={{ background: isLoad3Complete ? "transparent" : isLoad2Complete ? "#121212" : isLoadComplete ? "#DDD" : "#121212", pointerEvents: isLoad3Complete ? "none" : "all" }}>
+                    <div className="pageIntroMain1">
+                        <div className={`pageIntroTop ${isLoadComplete ? "over" : ""}`}></div>
+                        <div className={`pageIntroBottom ${isLoadComplete ? "over" : ""}`}></div>
+                        <div className="pageIntroCenter" style={{ opacity: isLoadStart ? "1" : "0" }}>
+                            <div className="pageIntroCenterLoad" style={{ width: `${introLoadText}%` }}></div>
+                            <div style={{ opacity: isLoadStart ? "1" : "0" }} className="pageIntroCenterLoadText">{introLoadText}%</div>
+                        </div>
+                    </div>
+                    <div className="pageIntroMain2">
+                        <div className={`pageIntroTop2 ${isLoad2Complete ? "over" : ""}`} style={{ background: isLoadComplete ? "#DDD" : "#121212" }}>
+                            Coded & Designed By
+                        </div>
+                        <div className={`pageIntroBottom2 ${isLoad2Complete ? "over" : ""}`} style={{ background: isLoadComplete ? "#DDD" : "#121212" }}>
+                            Aaryan Shaik
+                        </div>
+                    </div>
+                    <div className="pageIntroMain3">
+                        <div className={`pageIntroTop3 ${isLoad3Complete ? "over" : ""}`} style={{ background: isLoadComplete ? "#121212" : "#DDD" }}>
+                            Tools Used
+                        </div>
+                        <div className={`pageIntroBottom3 ${isLoad3Complete ? "over" : ""}`} style={{ background: isLoadComplete ? "#121212" : "#DDD" }}>
+                            <SiNextdotjs />
+                            <SiRedux />
+                            <SiFramer />
+                            <SiAdobephotoshop/>
+                        </div>
+                    </div>
+                </div></> : ""
+        }
         <div className='pageTransitionMain'>
             <div className='pageTransitionText'><h1 style={{ opacity: loading ? 1 : 0 }}>{route}</h1></div>
             <div
@@ -71,6 +142,7 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected }) => {
                 }}
             ></div>
         </div>
+
         <section className="home section grid">
             <img className='home__img' src='../assets/home.png' style={{ filter: `saturate(${isColor ? "1" : "0"})`, transition: ".3s ease-in-out" }} />
 
@@ -93,12 +165,14 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected }) => {
 
 Homepage.propTypes = {
     handleLoading: PropTypes.func.isRequired,
-    handleRouteSelected: PropTypes.func.isRequired
+    handleRouteSelected: PropTypes.func.isRequired,
+    handleIsIntro: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state) => ({
     loading: state.theme.loading,
-    route: state.theme.route
+    route: state.theme.route,
+    isIntro: state.theme.isIntro
 })
 
-export default connect(mapStateToProps, { handleLoading, handleRouteSelected })(Homepage)
+export default connect(mapStateToProps, { handleLoading, handleRouteSelected, handleIsIntro })(Homepage)

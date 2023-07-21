@@ -1,3 +1,4 @@
+import IntroTracker from './components/IntroTracker'
 import ReduxProvider from './components/ReduxProvider'
 import './globals.css'
 import { Inter } from 'next/font/google'
@@ -14,7 +15,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ReduxProvider>
-            {children}
+          <IntroTracker />
+          {children}
         </ReduxProvider>
       </body>
     </html>

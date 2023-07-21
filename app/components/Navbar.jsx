@@ -1,13 +1,13 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { links } from '../data'
 import Link from 'next/link'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { handleLoading, handleRouteSelected } from '@/store/actions/theme'
+import { handleLoading, handleRouteSelected, handleIsIntro } from '@/store/actions/theme'
 import { useRouter } from 'next/navigation'
 
-const Navbar = ({ name, handleLoading, loading, handleRouteSelected }) => {
+const Navbar = ({ name, handleLoading, loading, handleRouteSelected, handleIsIntro }) => {
     const [isActive, setisActive] = useState(false)
     const [showMenu, setshowMenu] = useState(false)
     const router = useRouter()
@@ -50,7 +50,8 @@ const Navbar = ({ name, handleLoading, loading, handleRouteSelected }) => {
 
 Navbar.propTypes = {
     handleLoading: PropTypes.func.isRequired,
-    handleRouteSelected: PropTypes.func.isRequired
+    handleRouteSelected: PropTypes.func.isRequired,
+    handleIsIntro: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
@@ -58,4 +59,4 @@ const mapStateToProps = (state) => ({
     loading: state.theme.loading
 })
 
-export default connect(mapStateToProps, { handleLoading, handleRouteSelected })(Navbar)
+export default connect(mapStateToProps, { handleLoading, handleRouteSelected, handleIsIntro })(Navbar)

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Handlee&family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700;800&family=Ysabeau+Infant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Handlee&family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700;800&family=Inspiration&family=Moon+Dance&family=Ysabeau+Infant&display=swap');
 
 :root {
   --first-color: hsl(271, 76%, 53%);
@@ -165,6 +165,38 @@ img {
 }
 
 /* ---------------------------------------------------- Base End ---------------------------------------------------- */
+
+/* ---------------------------------------------------- Scroll2Top ---------------------------------------------------- */
+
+#progress {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  height: 60px;
+  width: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 10;
+  transition: .5s ease;
+}
+
+#progress-value {
+  display: block;
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+  background-color: var(--body-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  color: var(--first-color);
+  transition: .5s ease;
+}
+
+/* ---------------------------------------------------- Scroll2Top End ---------------------------------------------------- */
 
 /* ---------------------------------------------------- Navbar ---------------------------------------------------- */
 
@@ -1165,7 +1197,7 @@ img {
   position: fixed;
   inset: 0;
   background-color: hsla(0, 0%, 0%, 0.7);
-  z-index: 1000;
+  z-index: 100;
   display: grid;
   place-items: center;
   padding: 15px;
@@ -1630,13 +1662,147 @@ img {
 
 /* ---------------------------------------------------- Contact End ---------------------------------------------------- */
 
+/* ---------------------------------------------------- Intro Transition -------------------------------------------------- */
+
+.pageIntroMain {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  background: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 1;
+}
+
+.pageIntroMain1,
+.pageIntroMain2,
+.pageIntroMain3 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pageIntroMain1 {
+  z-index: 203;
+}
+
+.pageIntroMain2 {
+  z-index: 202;
+}
+
+.pageIntroMain3 {
+  z-index: 201;
+}
+
+.pageIntroTop,
+.pageIntroBottom {
+  height: 100%;
+  width: 100%;
+  background: #121212;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transition: .5s ease-out;
+}
+
+.pageIntroTop.over {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.pageIntroBottom.over {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+
+.pageIntroCenter {
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: transparent;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.pageIntroCenterLoad {
+  height: 5px;
+  background: #ddd;
+  align-self: flex-start;
+}
+
+.pageIntroCenterLoadText {
+  font-size: 10vh;
+  position: absolute;
+  color: #ddd;
+  transition: .8s ease;
+}
+
+.pageIntroTop2,
+.pageIntroBottom2 {
+  height: 100%;
+  width: 100%;
+  color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10vh;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transition: .5s ease-out;
+}
+
+.pageIntroTop2,
+.pageIntroTop3,
+.pageIntroCenterLoadText {
+  font-family: 'Moon Dance', cursive;
+}
+
+.pageIntroBottom2 {
+  font-family: 'Inspiration', cursive !important;
+}
+
+.pageIntroTop2.over {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.pageIntroBottom2.over {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.pageIntroTop3,
+.pageIntroBottom3 {
+  height: 100%;
+  width: 100%;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10vh;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transition: .5s ease-out;
+  gap: 20px;
+}
+
+.pageIntroTop3.over {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.pageIntroBottom3.over {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+/* ---------------------------------------------------- Intro Transition End ----------------------------------------------- */
+
 /* ---------------------------------------------------- Page Transition ---------------------------------------------------- */
 
 .pageTransitionMain {
   position: absolute;
   height: 100%;
   width: 101%;
-  z-index: 1000;
+  z-index: 100;
   display: flex;
   pointer-events: none;
   justify-content: center;
@@ -1659,7 +1825,7 @@ img {
 
 .pageTransitionText {
   position: absolute;
-  z-index: 1001;
+  z-index: 101;
   font-family: 'Dancing Script', cursive;
 }
 

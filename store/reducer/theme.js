@@ -1,10 +1,11 @@
-import { LOADING, ROUTE, THEME_COLOR, THEME_STYLE } from "../actions/types";
+import { IS_INTRO, LOADING, ROUTE, THEME_COLOR, THEME_STYLE } from "../actions/types";
 
 const initialState = {
     themeColor: "hsl(252, 35%, 51%)",
     themeStyle: "dark-theme",
     loading: true,
-    route: "Home"
+    route: "Home",
+    isIntro: true
 };
 
 export default function (state = initialState, action) {
@@ -33,6 +34,12 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 route: payload
+            }
+
+            case IS_INTRO:
+            return {
+                ...state,
+                isIntro: payload
             }
 
         default:

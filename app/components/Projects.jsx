@@ -12,15 +12,29 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Loader from './Loader'
 import { handleLoading } from '@/store/actions/theme'
+import { BiUpArrow } from 'react-icons/bi'
 
-const Projects = ({ handleLoading, loading, route }) => {
+const Projects = ({ handleLoading, loading, route, themeColor }) => {
   const [selFilter, setselFilter] = useState("all")
   const filterData = selFilter == "all" ? portfolio : portfolio.filter((x) => x.category == selFilter)
   const { scrollY } = useViewportScroll();
   const divOffsetY = useTransform(scrollY, [0, 200], [0, -200]);
+  const [showButton, setshowButton] = useState(false)
+  const [scrollPercentage, setscrollPercentage] = useState(0)
 
   useEffect(() => {
     handleLoading(false)
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setshowButton(true);
+      } else {
+        setshowButton(false);
+      }
+      const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (window.scrollY / totalHeight) * 100;
+      setscrollPercentage(scrolled);
+    };
+    window.addEventListener('scroll', handleScroll);
     const list = document.querySelectorAll('.list')
     function activeLink() {
       list.forEach((item) =>
@@ -29,6 +43,10 @@ const Projects = ({ handleLoading, loading, route }) => {
     }
     list.forEach((item) =>
       item.addEventListener('click', activeLink))
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [])
 
   const handleClick = (event, type) => {
@@ -36,8 +54,16 @@ const Projects = ({ handleLoading, loading, route }) => {
     setselFilter(type)
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
+      <div id="progress" onClick={handleScrollToTop} style={{ background: `conic-gradient(${themeColor} ${Math.floor(scrollPercentage) + 1}%, transparent 0%)`, opacity: showButton ? "1" : "0" }}>
+        <span id="progress-value"><BiUpArrow /></span>
+      </div>
+
       <div className='pageTransitionMain'>
         <div className='pageTransitionText'><h1 style={{ opacity: loading ? 1 : 0 }}>{route}</h1></div>
         <div
@@ -139,7 +165,8 @@ Projects.propTypes = {
 
 const mapStateToProps = (state) => ({
   loading: state.theme.loading,
-  route: state.theme.route
+  route: state.theme.route,
+  themeColor: state.theme.themeColor
 })
 
 export default connect(mapStateToProps, { handleLoading })(Projects)
