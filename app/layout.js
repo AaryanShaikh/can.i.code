@@ -14,8 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ReduxProvider><IntroTracker /></ReduxProvider>
         <ReduxProvider>
-          <IntroTracker />
           {children}
         </ReduxProvider>
       </body>
