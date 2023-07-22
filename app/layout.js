@@ -11,14 +11,15 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  return (
+  return (<>
+    <ReduxProvider><IntroTracker /></ReduxProvider>
     <html lang="en">
-      <ReduxProvider><IntroTracker /></ReduxProvider>
       <body className={inter.className} >
         <ReduxProvider>
           {children}
         </ReduxProvider>
       </body>
     </html>
+  </>
   )
 }

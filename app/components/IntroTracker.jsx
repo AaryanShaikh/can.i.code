@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 const IntroTracker = ({ handleIsIntro }) => {
+    console.log("test called");
     useEffect(() => {
         handleIsIntro(true)
     }, [])
