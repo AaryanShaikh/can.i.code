@@ -13,8 +13,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <ReduxProvider><IntroTracker /></ReduxProvider>
+      <ReduxProvider><IntroTracker /></ReduxProvider>
+      <body className={inter.className} >
         <ReduxProvider>
           {children}
         </ReduxProvider>
