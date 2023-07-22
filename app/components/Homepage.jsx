@@ -19,6 +19,8 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
     const [isLoad2Complete, setisLoad2Complete] = useState(false)
     const [isLoad3Complete, setisLoad3Complete] = useState(false)
 
+    console.log("isIntro", isIntro);
+
     useEffect(() => {
         handleLoading(false)
         setTimeout(() => {
@@ -120,7 +122,7 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
                             <SiNextdotjs />
                             <SiRedux />
                             <SiFramer />
-                            <SiAdobephotoshop/>
+                            <SiAdobephotoshop />
                         </div>
                     </div>
                 </div></> : ""
