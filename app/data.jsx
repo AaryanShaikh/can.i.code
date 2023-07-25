@@ -217,7 +217,7 @@ export const skills = [
 
 export const portfolio = [
   {
-    id: 68,
+    id: 69,
     img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj69.png",
     title: "My Portfolio (2023)",
     category: "next",
