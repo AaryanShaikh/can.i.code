@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const Project = ({ img, title, details, link }) => {
     const [modal, setmodal] = useState(false)
+    const [isImgLoad, setisImgLoad] = useState(true)
 
     const ontoggleModal = () => {
         setmodal(!modal)
@@ -13,14 +14,39 @@ const Project = ({ img, title, details, link }) => {
             layout
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, }}
+            exit={{ opacity: 0, scale: 0 }}
             transition={{ type: "spring", bounce: 0.25 }}
         >
             <div
                 className='project'
                 onClick={ontoggleModal}
             >
-                <img src={img} />
+                {/* Img load */}
+                <AnimatePresence>
+                    {
+                        isImgLoad ?
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0, }}
+                                className="imgLoading"
+                            >
+                                <div class="dot-spinner">
+                                    <div class="dot-spinner__dot"></div>
+                                    <div class="dot-spinner__dot"></div>
+                                    <div class="dot-spinner__dot"></div>
+                                    <div class="dot-spinner__dot"></div>
+                                    <div class="dot-spinner__dot"></div>
+                                    <div class="dot-spinner__dot"></div>
+                                    <div class="dot-spinner__dot"></div>
+                                    <div class="dot-spinner__dot"></div>
+                                </div>
+                            </motion.div> : ""
+                    }
+
+                </AnimatePresence>
+
+                <img src={img} onLoad={() => { setisImgLoad(false) }} />
                 <div className='project_hover_item'>
                     <h3 className="portfolio__title">{title}</h3>
                 </div>

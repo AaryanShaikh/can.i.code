@@ -218,7 +218,7 @@ export const skills = [
 export const portfolio = [
   {
     id: 68,
-    img: "../assets/proj68.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj68.png",
     title: "Aaryan's Memoirs",
     category: "next",
     link: "https://cypher-watchlist.vercel.app/",
@@ -242,7 +242,7 @@ export const portfolio = [
   },
   {
     id: 67,
-    img: "../assets/proj67.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj67.png",
     title: "Sort It",
     category: "next",
     link: "https://aaryanshaikh.github.io/sort.it/",
@@ -266,7 +266,7 @@ export const portfolio = [
   },
   {
     id: 66,
-    img: "../assets/proj66.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj66.png",
     title: "Covid Programming Challenge",
     category: "react",
     link: "https://github.com/AaryanShaikh/Aaryan-Market",
@@ -290,7 +290,7 @@ export const portfolio = [
   },
   {
     id: 65,
-    img: "../assets/proj47.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj47.png",
     title: "Vanilla Market",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Aaryan-Market",
@@ -314,7 +314,7 @@ export const portfolio = [
   },
   {
     id: 64,
-    img: "../assets/proj46.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj46.png",
     title: "React Market",
     category: "react",
     link: "https://github.com/AaryanShaikh/mini-project-react-pro-market-shopping-app",
@@ -338,7 +338,7 @@ export const portfolio = [
   },
   {
     id: 63,
-    img: "../assets/proj45.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj45.png",
     title: "My Portfolio (2022)",
     category: "react",
     link: "https://github.com/AaryanShaikh/myportfolio",
@@ -362,7 +362,7 @@ export const portfolio = [
   },
   {
     id: 62,
-    img: "../assets/proj44.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj44.png",
     title: "React Book Store",
     category: "react",
     link: "https://github.com/AaryanShaikh/react-probooks",
@@ -386,7 +386,7 @@ export const portfolio = [
   },
   {
     id: 61,
-    img: "../assets/proj43.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj43.png",
     title: "React Quiz App",
     category: "react",
     link: "https://github.com/AaryanShaikh/project-Builder-stage-IV-quiz-complete",
@@ -410,7 +410,7 @@ export const portfolio = [
   },
   {
     id: 60,
-    img: "../assets/proj42.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj42.png",
     title: "React Pro-Trips",
     category: "react",
     link: "https://github.com/AaryanShaikh/react-protrips",
@@ -434,7 +434,7 @@ export const portfolio = [
   },
   {
     id: 59,
-    img: "../assets/proj41.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj41.png",
     title: "React Pro-Nutrition",
     category: "react",
     link: "https://github.com/AaryanShaikh/lab-react-pronutrition",
@@ -458,7 +458,7 @@ export const portfolio = [
   },
   {
     id: 58,
-    img: "../assets/proj40.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj40.png",
     title: "React Notepad",
     category: "react",
     link: "https://github.com/AaryanShaikh/project-builder-smartwatch-timer",
@@ -482,7 +482,7 @@ export const portfolio = [
   },
   {
     id: 57,
-    img: "../assets/proj39.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj39.png",
     title: "Smart Watch",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/project-builder-smartwatch-timer",
@@ -506,7 +506,7 @@ export const portfolio = [
   },
   {
     id: 56,
-    img: "../assets/proj38.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj38.png",
     title: "Movie Mania",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/mini-project-builder-movie-mania",
@@ -530,7 +530,7 @@ export const portfolio = [
   },
   {
     id: 55,
-    img: "../assets/proj37.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj37.png",
     title: "Live News",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/lab-js-live-news",
@@ -554,7 +554,7 @@ export const portfolio = [
   },
   {
     id: 54,
-    img: "../assets/proj36.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj36.png",
     title: "Weather Forcast",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/weather-forecast",
@@ -578,7 +578,7 @@ export const portfolio = [
   },
   {
     id: 53,
-    img: "../assets/proj35.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj35.png",
     title: "Contact Book",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/lab-js-prograd-contacts",
@@ -602,7 +602,7 @@ export const portfolio = [
   },
   {
     id: 52,
-    img: "../assets/proj34.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj34.png",
     title: "Online Expense Tracker",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/lab-js-prograd-expense-tracker",
@@ -626,7 +626,7 @@ export const portfolio = [
   },
   {
     id: 51,
-    img: "../assets/proj33.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj33.png",
     title: "Online Burger Maker",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/lab-brrrgrrr",
@@ -650,7 +650,7 @@ export const portfolio = [
   },
   {
     id: 50,
-    img: "../assets/proj32.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj32.png",
     title: "Snakes and Ladders Game",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Snakes-and-Ladders-game",
@@ -674,7 +674,7 @@ export const portfolio = [
   },
   {
     id: 49,
-    img: "../assets/proj31.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj31.png",
     title: "Mini Monopoly Game",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Mini-Monopoly-Game",
@@ -698,7 +698,7 @@ export const portfolio = [
   },
   {
     id: 48,
-    img: "../assets/proj30.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj30.png",
     title: "Cake World",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/mini-project-builder-cake-world",
@@ -722,7 +722,7 @@ export const portfolio = [
   },
   {
     id: 47,
-    img: "../assets/proj29.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj29.png",
     title: "CricPro ScoreBoard",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/CricPro-ScoreBoard",
@@ -746,7 +746,7 @@ export const portfolio = [
   },
   {
     id: 46,
-    img: "../assets/proj28.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj28.png",
     title: "UEFA Footbal Penalty Game",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/UEFA-Footbal-Penalty-Game",
@@ -770,7 +770,7 @@ export const portfolio = [
   },
   {
     id: 45,
-    img: "../assets/proj27.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj27.png",
     title: "IPL Super Over Game",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Super-Over",
@@ -794,7 +794,7 @@ export const portfolio = [
   },
   {
     id: 44,
-    img: "../assets/proj26.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj26.png",
     title: "PlayStore Installing Animation",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Play-Store-Installing-animation",
@@ -818,7 +818,7 @@ export const portfolio = [
   },
   {
     id: 43,
-    img: "../assets/proj25.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj25.png",
     title: "Live Workplace",
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Live-Workplace",
@@ -842,7 +842,7 @@ export const portfolio = [
   },
   {
     id: 42,
-    img: "../assets/proj65.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj65.png",
     title: "Logo Effect",
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/logo_effect.jpg",
@@ -866,7 +866,7 @@ export const portfolio = [
   },
   {
     id: 41,
-    img: "../assets/proj64.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj64.png",
     title: "Slice Effect",
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/slice_effect.jpg",
@@ -890,7 +890,7 @@ export const portfolio = [
   },
   {
     id: 40,
-    img: "../assets/proj63.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj63.png",
     title: "Two Tone Effect",
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/two_tone_effect.jpg",
@@ -914,7 +914,7 @@ export const portfolio = [
   },
   {
     id: 39,
-    img: "../assets/proj62.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj62.png",
     title: "Photo Mosaic Effect",
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/photo_mosaic_effect.jpg",
@@ -938,7 +938,7 @@ export const portfolio = [
   },
   {
     id: 38,
-    img: "../assets/proj24.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj24.png",
     title: "The Unknown",
     category: "unity",
     link: "https://drive.google.com/drive/folders/1BD0_eNlIcHKIlXGZbfxLs3UmNcZKlQNs?usp=sharing",
@@ -962,7 +962,7 @@ export const portfolio = [
   },
   {
     id: 37,
-    img: "../assets/proj23.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj23.png",
     title: "Bullet Time",
     category: "unity",
     link: "https://drive.google.com/drive/folders/1BD0_eNlIcHKIlXGZbfxLs3UmNcZKlQNs?usp=sharing",
@@ -986,7 +986,7 @@ export const portfolio = [
   },
   {
     id: 36,
-    img: "../assets/proj22.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj22.png",
     title: "Cypher in Wonderland",
     category: "unity",
     link: "https://drive.google.com/drive/folders/1BD0_eNlIcHKIlXGZbfxLs3UmNcZKlQNs?usp=sharing",
@@ -1010,7 +1010,7 @@ export const portfolio = [
   },
   {
     id: 35,
-    img: "../assets/proj21.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj21.png",
     title: "Code CS",
     category: "unity",
     link: "https://drive.google.com/drive/folders/1BD0_eNlIcHKIlXGZbfxLs3UmNcZKlQNs?usp=sharing",
@@ -1034,7 +1034,7 @@ export const portfolio = [
   },
   {
     id: 34,
-    img: "../assets/proj20.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj20.png",
     title: "Maeda's Run",
     category: "unity",
     link: "https://drive.google.com/drive/folders/1BD0_eNlIcHKIlXGZbfxLs3UmNcZKlQNs?usp=sharing",
@@ -1058,7 +1058,7 @@ export const portfolio = [
   },
   {
     id: 33,
-    img: "../assets/proj19.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj19.png",
     title: "Cypher's Adventure",
     category: "unity",
     link: "https://drive.google.com/drive/folders/1BD0_eNlIcHKIlXGZbfxLs3UmNcZKlQNs?usp=sharing",
@@ -1082,7 +1082,7 @@ export const portfolio = [
   },
   {
     id: 32,
-    img: "../assets/proj61.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj61.png",
     title: 'Future Tech Effect',
     category: "unity",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/my_3d_model.jpg",
@@ -1106,7 +1106,7 @@ export const portfolio = [
   },
   {
     id: 31,
-    img: "../assets/proj60.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj60.png",
     title: 'Future Tech Effect',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/future_tech_effect.jpg",
@@ -1130,7 +1130,7 @@ export const portfolio = [
   },
   {
     id: 30,
-    img: "../assets/proj59.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj59.png",
     title: 'Chibi Toon Effect',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/chibi_toon_effect.jpg",
@@ -1154,7 +1154,7 @@ export const portfolio = [
   },
   {
     id: 29,
-    img: "../assets/proj58.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj58.png",
     title: 'Anime Effect',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/anime_effect.jpg",
@@ -1178,7 +1178,7 @@ export const portfolio = [
   },
   {
     id: 28,
-    img: "../assets/proj18.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj18.png",
     title: 'Avatar Creator',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Avatar-Creator",
@@ -1202,7 +1202,7 @@ export const portfolio = [
   },
   {
     id: 27,
-    img: "../assets/proj17.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj17.png",
     title: 'Image Filter',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Image-Filter",
@@ -1226,7 +1226,7 @@ export const portfolio = [
   },
   {
     id: 26,
-    img: "../assets/proj16.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj16.png",
     title: 'Text Analyzer',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Text-Analyzer",
@@ -1250,7 +1250,7 @@ export const portfolio = [
   },
   {
     id: 25,
-    img: "../assets/proj15.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj15.png",
     title: 'Tic Tac Toe Game',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Tic-Tac-Toe-Game",
@@ -1274,7 +1274,7 @@ export const portfolio = [
   },
   {
     id: 24,
-    img: "../assets/proj14.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj14.png",
     title: 'Random Color Pallete',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Random-Color-Pallete",
@@ -1298,7 +1298,7 @@ export const portfolio = [
   },
   {
     id: 23,
-    img: "../assets/proj13.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj13.png",
     title: 'Random Password Generator',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Random-Password-Generator",
@@ -1322,7 +1322,7 @@ export const portfolio = [
   },
   {
     id: 22,
-    img: "../assets/proj12.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj12.png",
     title: 'Instagram Clone',
     category: "android",
     link: "https://github.com/AaryanShaikh/Instagram-Clone",
@@ -1346,7 +1346,7 @@ export const portfolio = [
   },
   {
     id: 21,
-    img: "../assets/proj11.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj11.png",
     title: 'Hex Converter App',
     category: "android",
     link: "https://github.com/AaryanShaikh/Hex-Converter",
@@ -1370,7 +1370,7 @@ export const portfolio = [
   },
   {
     id: 20,
-    img: "../assets/proj10.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj10.png",
     title: 'Dhaan',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Dhaan",
@@ -1394,7 +1394,7 @@ export const portfolio = [
   },
   {
     id: 19,
-    img: "../assets/proj9.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj9.png",
     title: 'My Portfolio (2021)',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/JustAnAveragePortfolio",
@@ -1418,7 +1418,7 @@ export const portfolio = [
   },
   {
     id: 18,
-    img: "../assets/proj8.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj8.png",
     title: 'Crocs and Cops',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Virtual-Cops",
@@ -1442,7 +1442,7 @@ export const portfolio = [
   },
   {
     id: 17,
-    img: "../assets/proj7.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj7.png",
     title: 'Modern Calculator',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Modern-Calculator",
@@ -1466,7 +1466,7 @@ export const portfolio = [
   },
   {
     id: 16,
-    img: "../assets/proj6.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj6.png",
     title: 'Tom and Jerry Game',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Tom-and-Jerry-Game",
@@ -1490,7 +1490,7 @@ export const portfolio = [
   },
   {
     id: 15,
-    img: "../assets/proj5.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj5.png",
     title: 'Computer Speaks',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Computer-Speaks",
@@ -1514,7 +1514,7 @@ export const portfolio = [
   },
   {
     id: 14,
-    img: "../assets/proj4.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj4.png",
     title: 'Real-Time Face Detection',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Real-Time-Face-Detection",
@@ -1538,7 +1538,7 @@ export const portfolio = [
   },
   {
     id: 13,
-    img: "../assets/proj3.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj3.png",
     title: 'Rock Paper Scissor Game',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Rock-Paper-Scissor-Game",
@@ -1562,7 +1562,7 @@ export const portfolio = [
   },
   {
     id: 12,
-    img: "../assets/proj2.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj2.png",
     title: 'Sling Shot Game',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Sling-Shot-Game",
@@ -1586,7 +1586,7 @@ export const portfolio = [
   },
   {
     id: 11,
-    img: "../assets/proj1.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj1.png",
     title: 'Designing Imagination',
     category: "vanilla",
     link: "https://github.com/AaryanShaikh/Designing-Imagination",
@@ -1610,7 +1610,7 @@ export const portfolio = [
   },
   {
     id: 10,
-    img: "../assets/proj57.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj57.png",
     title: 'Comic Book Effect',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/comic_book_effect.jpg",
@@ -1634,7 +1634,7 @@ export const portfolio = [
   },
   {
     id: 9,
-    img: "../assets/proj56.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj56.png",
     title: 'Fantasy Effect 2',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/fantasy_effect_2.jpg",
@@ -1658,7 +1658,7 @@ export const portfolio = [
   },
   {
     id: 8,
-    img: "../assets/proj55.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj55.png",
     title: 'Fantasy Effect',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/fantasy_effect.jpg",
@@ -1682,7 +1682,7 @@ export const portfolio = [
   },
   {
     id: 7,
-    img: "../assets/proj54.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj54.png",
     title: 'Painting Effect',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/painting_effect.jpg",
@@ -1706,7 +1706,7 @@ export const portfolio = [
   },
   {
     id: 6,
-    img: "../assets/proj53.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj53.png",
     title: 'Glitch Effect',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/glitch_effect.jpg",
@@ -1730,7 +1730,7 @@ export const portfolio = [
   },
   {
     id: 5,
-    img: "../assets/proj52.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj52.png",
     title: 'Crystalized Text Effect',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/text_effect_2.png",
@@ -1754,7 +1754,7 @@ export const portfolio = [
   },
   {
     id: 4,
-    img: "../assets/proj51.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj51.png",
     title: 'Fish In A Bulb',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/fish_in_a_bulb.jpg",
@@ -1778,7 +1778,7 @@ export const portfolio = [
   },
   {
     id: 3,
-    img: "../assets/proj50.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj50.png",
     title: 'Wall Painting Effect',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/wall_painting_effect.jpg",
@@ -1802,7 +1802,7 @@ export const portfolio = [
   },
   {
     id: 2,
-    img: "../assets/proj49.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj49.png",
     title: 'Ancient Text Effect',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/ancient_text_effect.jpg",
@@ -1826,7 +1826,7 @@ export const portfolio = [
   },
   {
     id: 1,
-    img: "../assets/proj48.png",
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj48.png",
     title: 'Vector Logo Effect',
     category: "photoshop",
     link: "https://github.com/AaryanShaikh/My-Stock/blob/main/portfolio2023/vector_logo_effect.jpg",
