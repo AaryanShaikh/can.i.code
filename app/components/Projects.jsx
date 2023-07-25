@@ -82,7 +82,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
         ></div>
       </div>
       <section className="portfolio section">
-        <h2 className="section__title">My <span>Projects</span></h2>
+        <h2 className="section__title">My <span>{portfolio.length}</span> Projects</h2>
 
         <div className="filter-container container">
           <motion.div
