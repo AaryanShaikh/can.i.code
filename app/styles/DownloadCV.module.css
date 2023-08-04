@@ -1,0 +1,540 @@
+.container {
+    height: 100px;
+    width: 250px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.outBorder {
+    border: 3px solid var(--first-color);
+    width: 80%;
+    height: 70%;
+    border-radius: 50px;
+    overflow: visible;
+    cursor: pointer;
+    transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+
+.outBorder::before {
+    content: "";
+    position: absolute;
+    height: 0%;
+    width: 63%;
+    background: var(--body-color);
+    top: 65px;
+    display: flex;
+    left: 14%;
+    border-radius: 50% 0% 44% 56% / 0% 0% 23% 20%;
+    opacity: 0;
+    border: 3px solid var(--first-color);
+    border-top: 3px solid transparent;
+    transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    justify-content: center;
+    align-items: center;
+}
+
+.outBorder:hover::before {
+    content: "169KB .pdf";
+    height: 60%;
+    opacity: 1;
+}
+
+.outBorder.active {
+    width: 30%;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(var(--title-color) 0%, transparent 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes progress {
+    0% {
+        background: conic-gradient(var(--title-color) 0%, transparent 0%);
+    }
+
+    1% {
+        background: conic-gradient(var(--title-color) 1%, transparent 0%);
+    }
+
+    2% {
+        background: conic-gradient(var(--title-color) 2%, transparent 0%);
+    }
+
+    3% {
+        background: conic-gradient(var(--title-color) 3%, transparent 0%);
+    }
+
+    4% {
+        background: conic-gradient(var(--title-color) 4%, transparent 0%);
+    }
+
+    5% {
+        background: conic-gradient(var(--title-color) 5%, transparent 0%);
+    }
+
+    6% {
+        background: conic-gradient(var(--title-color) 6%, transparent 0%);
+    }
+
+    7% {
+        background: conic-gradient(var(--title-color) 7%, transparent 0%);
+    }
+
+    8% {
+        background: conic-gradient(var(--title-color) 8%, transparent 0%);
+    }
+
+    9% {
+        background: conic-gradient(var(--title-color) 9%, transparent 0%);
+    }
+
+    10% {
+        background: conic-gradient(var(--title-color) 10%, transparent 0%);
+    }
+
+    11% {
+        background: conic-gradient(var(--title-color) 11%, transparent 0%);
+    }
+
+    12% {
+        background: conic-gradient(var(--title-color) 12%, transparent 0%);
+    }
+
+    13% {
+        background: conic-gradient(var(--title-color) 13%, transparent 0%);
+    }
+
+    14% {
+        background: conic-gradient(var(--title-color) 14%, transparent 0%);
+    }
+
+    15% {
+        background: conic-gradient(var(--title-color) 15%, transparent 0%);
+    }
+
+    16% {
+        background: conic-gradient(var(--title-color) 16%, transparent 0%);
+    }
+
+    17% {
+        background: conic-gradient(var(--title-color) 17%, transparent 0%);
+    }
+
+    18% {
+        background: conic-gradient(var(--title-color) 18%, transparent 0%);
+    }
+
+    19% {
+        background: conic-gradient(var(--title-color) 19%, transparent 0%);
+    }
+
+    20% {
+        background: conic-gradient(var(--title-color) 20%, transparent 0%);
+    }
+
+    21% {
+        background: conic-gradient(var(--title-color) 21%, transparent 0%);
+    }
+
+    22% {
+        background: conic-gradient(var(--title-color) 22%, transparent 0%);
+    }
+
+    23% {
+        background: conic-gradient(var(--title-color) 23%, transparent 0%);
+    }
+
+    24% {
+        background: conic-gradient(var(--title-color) 24%, transparent 0%);
+    }
+
+    25% {
+        background: conic-gradient(var(--title-color) 25%, transparent 0%);
+    }
+
+    26% {
+        background: conic-gradient(var(--title-color) 26%, transparent 0%);
+    }
+
+    27% {
+        background: conic-gradient(var(--title-color) 27%, transparent 0%);
+    }
+
+    28% {
+        background: conic-gradient(var(--title-color) 28%, transparent 0%);
+    }
+
+    29% {
+        background: conic-gradient(var(--title-color) 29%, transparent 0%);
+    }
+
+    30% {
+        background: conic-gradient(var(--title-color) 30%, transparent 0%);
+    }
+
+    31% {
+        background: conic-gradient(var(--title-color) 31%, transparent 0%);
+    }
+
+    32% {
+        background: conic-gradient(var(--title-color) 32%, transparent 0%);
+    }
+
+    33% {
+        background: conic-gradient(var(--title-color) 33%, transparent 0%);
+    }
+
+    34% {
+        background: conic-gradient(var(--title-color) 34%, transparent 0%);
+    }
+
+    35% {
+        background: conic-gradient(var(--title-color) 35%, transparent 0%);
+    }
+
+    36% {
+        background: conic-gradient(var(--title-color) 36%, transparent 0%);
+    }
+
+    37% {
+        background: conic-gradient(var(--title-color) 37%, transparent 0%);
+    }
+
+    38% {
+        background: conic-gradient(var(--title-color) 38%, transparent 0%);
+    }
+
+    39% {
+        background: conic-gradient(var(--title-color) 39%, transparent 0%);
+    }
+
+    40% {
+        background: conic-gradient(var(--title-color) 40%, transparent 0%);
+    }
+
+    41% {
+        background: conic-gradient(var(--title-color) 41%, transparent 0%);
+    }
+
+    42% {
+        background: conic-gradient(var(--title-color) 42%, transparent 0%);
+    }
+
+    43% {
+        background: conic-gradient(var(--title-color) 43%, transparent 0%);
+    }
+
+    44% {
+        background: conic-gradient(var(--title-color) 44%, transparent 0%);
+    }
+
+    45% {
+        background: conic-gradient(var(--title-color) 45%, transparent 0%);
+    }
+
+    46% {
+        background: conic-gradient(var(--title-color) 46%, transparent 0%);
+    }
+
+    47% {
+        background: conic-gradient(var(--title-color) 47%, transparent 0%);
+    }
+
+    48% {
+        background: conic-gradient(var(--title-color) 48%, transparent 0%);
+    }
+
+    49% {
+        background: conic-gradient(var(--title-color) 49%, transparent 0%);
+    }
+
+    50% {
+        background: conic-gradient(var(--title-color) 50%, transparent 0%);
+    }
+
+    51% {
+        background: conic-gradient(var(--title-color) 51%, transparent 0%);
+    }
+
+    52% {
+        background: conic-gradient(var(--title-color) 52%, transparent 0%);
+    }
+
+    53% {
+        background: conic-gradient(var(--title-color) 53%, transparent 0%);
+    }
+
+    54% {
+        background: conic-gradient(var(--title-color) 54%, transparent 0%);
+    }
+
+    55% {
+        background: conic-gradient(var(--title-color) 55%, transparent 0%);
+    }
+
+    56% {
+        background: conic-gradient(var(--title-color) 56%, transparent 0%);
+    }
+
+    57% {
+        background: conic-gradient(var(--title-color) 57%, transparent 0%);
+    }
+
+    58% {
+        background: conic-gradient(var(--title-color) 58%, transparent 0%);
+    }
+
+    59% {
+        background: conic-gradient(var(--title-color) 59%, transparent 0%);
+    }
+
+    60% {
+        background: conic-gradient(var(--title-color) 60%, transparent 0%);
+    }
+
+    61% {
+        background: conic-gradient(var(--title-color) 61%, transparent 0%);
+    }
+
+    62% {
+        background: conic-gradient(var(--title-color) 62%, transparent 0%);
+    }
+
+    63% {
+        background: conic-gradient(var(--title-color) 63%, transparent 0%);
+    }
+
+    64% {
+        background: conic-gradient(var(--title-color) 64%, transparent 0%);
+    }
+
+    65% {
+        background: conic-gradient(var(--title-color) 65%, transparent 0%);
+    }
+
+    66% {
+        background: conic-gradient(var(--title-color) 66%, transparent 0%);
+    }
+
+    67% {
+        background: conic-gradient(var(--title-color) 67%, transparent 0%);
+    }
+
+    68% {
+        background: conic-gradient(var(--title-color) 68%, transparent 0%);
+    }
+
+    69% {
+        background: conic-gradient(var(--title-color) 69%, transparent 0%);
+    }
+
+    70% {
+        background: conic-gradient(var(--title-color) 70%, transparent 0%);
+    }
+
+    71% {
+        background: conic-gradient(var(--title-color) 71%, transparent 0%);
+    }
+
+    72% {
+        background: conic-gradient(var(--title-color) 72%, transparent 0%);
+    }
+
+    73% {
+        background: conic-gradient(var(--title-color) 73%, transparent 0%);
+    }
+
+    74% {
+        background: conic-gradient(var(--title-color) 74%, transparent 0%);
+    }
+
+    75% {
+        background: conic-gradient(var(--title-color) 75%, transparent 0%);
+    }
+
+    76% {
+        background: conic-gradient(var(--title-color) 76%, transparent 0%);
+    }
+
+    77% {
+        background: conic-gradient(var(--title-color) 77%, transparent 0%);
+    }
+
+    78% {
+        background: conic-gradient(var(--title-color) 78%, transparent 0%);
+    }
+
+    79% {
+        background: conic-gradient(var(--title-color) 79%, transparent 0%);
+    }
+
+    80% {
+        background: conic-gradient(var(--title-color) 80%, transparent 0%);
+    }
+
+    81% {
+        background: conic-gradient(var(--title-color) 81%, transparent 0%);
+    }
+
+    82% {
+        background: conic-gradient(var(--title-color) 82%, transparent 0%);
+    }
+
+    83% {
+        background: conic-gradient(var(--title-color) 83%, transparent 0%);
+    }
+
+    84% {
+        background: conic-gradient(var(--title-color) 84%, transparent 0%);
+    }
+
+    85% {
+        background: conic-gradient(var(--title-color) 85%, transparent 0%);
+    }
+
+    86% {
+        background: conic-gradient(var(--title-color) 86%, transparent 0%);
+    }
+
+    87% {
+        background: conic-gradient(var(--title-color) 87%, transparent 0%);
+    }
+
+    88% {
+        background: conic-gradient(var(--title-color) 88%, transparent 0%);
+    }
+
+    89% {
+        background: conic-gradient(var(--title-color) 89%, transparent 0%);
+    }
+
+    90% {
+        background: conic-gradient(var(--title-color) 90%, transparent 0%);
+    }
+
+    91% {
+        background: conic-gradient(var(--title-color) 91%, transparent 0%);
+    }
+
+    92% {
+        background: conic-gradient(var(--title-color) 92%, transparent 0%);
+    }
+
+    93% {
+        background: conic-gradient(var(--title-color) 93%, transparent 0%);
+    }
+
+    94% {
+        background: conic-gradient(var(--title-color) 94%, transparent 0%);
+    }
+
+    95% {
+        background: conic-gradient(var(--title-color) 95%, transparent 0%);
+    }
+
+    96% {
+        background: conic-gradient(var(--title-color) 96%, transparent 0%);
+    }
+
+    97% {
+        background: conic-gradient(var(--title-color) 97%, transparent 0%);
+    }
+
+    98% {
+        background: conic-gradient(var(--title-color) 98%, transparent 0%);
+    }
+
+    99% {
+        background: conic-gradient(var(--title-color) 99%, transparent 0%);
+    }
+
+    100% {
+        background: conic-gradient(var(--title-color) 100%, transparent 0%);
+    }
+}
+
+.progress.active {
+    animation: progress 2s ease .5s;
+}
+
+.content {
+    background: var(--body-color);
+    width: 95%;
+    height: 80%;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--body-color);
+    width: 95%;
+    height: 80%;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 15px;
+    transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.content.active {
+    padding-right: 0px;
+    border-radius: 50%;
+    width: 75%;
+}
+
+.icon {
+    background: var(--first-color);
+    height: 100%;
+    border-radius: 50%;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icon.active {
+    transform: rotate(180deg);
+}
+
+.icon svg {
+    position: absolute;
+    font-size: 4vh;
+    transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: var(--text-white);
+}
+
+.icon svg:first-child {
+    opacity: 1;
+}
+
+.icon svg:last-child {
+    opacity: 0;
+}
+
+.icon.active svg:first-child {
+    opacity: 0;
+}
+
+.icon.active svg:last-child {
+    opacity: 1;
+}
+
+.text {
+    opacity: 1;
+    font-size: 16px;
+    transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.text.active {
+    opacity: 0;
+    font-size: 0px;
+}

@@ -12,6 +12,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { handleLoading } from '@/store/actions/theme';
 import { BiUpArrow } from 'react-icons/bi';
+import DownloadCV from './DownloadCV';
 
 const About = ({ handleLoading, loading, route, themeColor }) => {
     const [showButton, setshowButton] = useState(false)
@@ -76,7 +77,8 @@ const About = ({ handleLoading, loading, route, themeColor }) => {
                             <ul className="info__list grid">
                                 <Info />
                             </ul>
-                            <a href="../../assets/aaryan-resume.pdf" download="aaryan-resume.pdf" className="button">Download CV <span className='button__icon'><FaDownload /></span></a>
+                            {/* <a href="../../assets/aaryan-resume.pdf" download="aaryan-resume.pdf" className="button">Download CV <span className='button__icon'><FaDownload /></span></a> */}
+                            <DownloadCV />
                         </motion.div>
 
                         <motion.div
