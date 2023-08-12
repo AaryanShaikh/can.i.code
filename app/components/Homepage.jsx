@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { MdOutlineKeyboardDoubleArrowRight } from 'react-icons/md'
 import Loader from './Loader'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { handleLoading, handleRouteSelected, handleIsIntro } from '@/store/actions/theme'
@@ -18,8 +18,6 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
     const [isLoadStart, setisLoadStart] = useState(true)
     const [isLoad2Complete, setisLoad2Complete] = useState(false)
     const [isLoad3Complete, setisLoad3Complete] = useState(false)
-
-    console.log("isIntro", isIntro);
 
     useEffect(() => {
         handleLoading(false)
@@ -95,7 +93,7 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
     };
 
     return (<>
-        {
+        {/* {
             isIntro ? <>
                 <div className='pageIntroMain' style={{ background: isLoad3Complete ? "transparent" : isLoad2Complete ? "#121212" : isLoadComplete ? "#DDD" : "#121212", pointerEvents: isLoad3Complete ? "none" : "all" }}>
                     <div className="pageIntroMain1">
@@ -126,7 +124,7 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
                         </div>
                     </div>
                 </div></> : ""
-        }
+        } */}
         <div className='pageTransitionMain'>
             <div className='pageTransitionText'><h1 style={{ opacity: loading ? 1 : 0 }}>{route}</h1></div>
             <div
@@ -161,6 +159,44 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
 
             <div className="color__block"></div>
         </section>
+
+        <div className='homeMob'>
+            <div className="textBx">
+                {
+                    "HOME".split("").reverse().join('').split("").map((ele, ind) => {
+                        return <h4 key={ind} style={{ top: `${-100 * ind}px` }}>{ele}</h4>
+                    })
+                }
+            </div>
+            <div className="mobMainTxt">
+                <img src="../../assets/homeMob.png" alt="" />
+                <div className="txts">
+                    <motion.div
+                        initial={{ opacity: 0, x: 100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5, type: "spring", bounce: 0.6 }}
+                        className="backTxt"
+                    >
+                        <h4>AARYAN</h4>
+                        <h4>SHAIK</h4>
+                    </motion.div>
+                    <motion.div
+                     initial={{ opacity: 0, x: -100 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     transition={{ delay: 0.5, type: "spring", bounce: 0.6 }} 
+                    className="frontTxt"
+                    >
+                        <h4>WEB</h4>
+                        <h4>WIZARD</h4>
+                    </motion.div>
+                </div>
+            </div>
+            <div className="mobNxtBtnWrapper" onClick={(e) => { onRouteChange(e, "/about", "About") }}>
+                <div className="mobNxtBtn">
+                    Read More
+                </div>
+            </div>
+        </div>
     </>
     )
 }

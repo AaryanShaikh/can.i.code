@@ -31,15 +31,15 @@ const Project = ({ img, title, details, link }) => {
                                 exit={{ opacity: 0, }}
                                 className="imgLoading"
                             >
-                                <div class="dot-spinner">
-                                    <div class="dot-spinner__dot"></div>
-                                    <div class="dot-spinner__dot"></div>
-                                    <div class="dot-spinner__dot"></div>
-                                    <div class="dot-spinner__dot"></div>
-                                    <div class="dot-spinner__dot"></div>
-                                    <div class="dot-spinner__dot"></div>
-                                    <div class="dot-spinner__dot"></div>
-                                    <div class="dot-spinner__dot"></div>
+                                <div className="dot-spinner">
+                                    <div className="dot-spinner__dot"></div>
+                                    <div className="dot-spinner__dot"></div>
+                                    <div className="dot-spinner__dot"></div>
+                                    <div className="dot-spinner__dot"></div>
+                                    <div className="dot-spinner__dot"></div>
+                                    <div className="dot-spinner__dot"></div>
+                                    <div className="dot-spinner__dot"></div>
+                                    <div className="dot-spinner__dot"></div>
                                 </div>
                             </motion.div> : ""
                     }

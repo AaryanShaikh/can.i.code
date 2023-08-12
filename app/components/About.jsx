@@ -141,6 +141,15 @@ const About = ({ handleLoading, loading, route, themeColor }) => {
                 </motion.section>
 
             </main>
+            <div className='aboutMob'>
+                <div className="textBx">
+                    {
+                        "ABOUT".split("").reverse().join('').split("").map((ele, ind) => {
+                            return <h4 key={ind} style={{ top: `${-100 * ind}px` }}>{ele}</h4>
+                        })
+                    }
+                </div>
+            </div>
         </>
     )
 }

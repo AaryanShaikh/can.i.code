@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 const IntroTracker = ({ handleIsIntro }) => {
     useEffect(() => {
         const hasExecuted = localStorage.getItem('hasExecuted');
-        console.log("hasExecuted", hasExecuted);
+        // console.log("hasExecuted", hasExecuted);
         if(hasExecuted==null){
             handleIsIntro(true)
             localStorage.setItem('hasExecuted', 'true');
