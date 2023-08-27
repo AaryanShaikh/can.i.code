@@ -657,7 +657,7 @@ img {
 .big-card:nth-child(1) {
   transform: translateX(-10%) rotate(-1deg);
   z-index: 2;
-  background-image: url('/assets/bigImg1.webp');
+  background-image: url('/assets/bigimg1.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -666,7 +666,7 @@ img {
 .big-card:nth-child(2) {
   transform: rotate(2deg);
   z-index: 4;
-  background-image: url('/assets/bigImg2.webp');
+  background-image: url('/assets/bigimg2.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -675,7 +675,7 @@ img {
 .big-card:nth-child(3) {
   transform: translateX(-6%) rotate(-3deg);
   z-index: 6;
-  background-image: url('/assets/bigImg4.webp');
+  background-image: url('/assets/bigimg4.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -684,7 +684,7 @@ img {
 .big-card:nth-child(4) {
   transform: translate(10%, 3%) rotate(5deg);
   z-index: 8;
-  background-image: url('/assets/bigImg3.webp');
+  background-image: url('/assets/bigimg3.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

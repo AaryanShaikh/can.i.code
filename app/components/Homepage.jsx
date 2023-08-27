@@ -93,7 +93,7 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
     };
 
     return (<>
-        {/* {
+        {
             isIntro ? <>
                 <div className='pageIntroMain' style={{ background: isLoad3Complete ? "transparent" : isLoad2Complete ? "#121212" : isLoadComplete ? "#DDD" : "#121212", pointerEvents: isLoad3Complete ? "none" : "all" }}>
                     <div className="pageIntroMain1">
@@ -124,7 +124,7 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
                         </div>
                     </div>
                 </div></> : ""
-        } */}
+        }
         <div className='pageTransitionMain'>
             <div className='pageTransitionText'><h1 style={{ opacity: loading ? 1 : 0 }}>{route}</h1></div>
             <div
@@ -169,7 +169,7 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
                 }
             </div>
             <div className="mobMainTxt">
-                <img src="../../assets/homeMob.webp" alt="" />
+                <img src="../../assets/homemob.webp" alt="" />
                 <div className="txts">
                     <motion.div
                         initial={{ opacity: 0, x: 100 }}
