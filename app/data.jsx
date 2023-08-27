@@ -217,6 +217,102 @@ export const skills = [
 
 export const portfolio = [
   {
+    id: 72,
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj73.webp",
+    title: "Avatar Logo (purple)",
+    category: "photoshop",
+    link: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/backup%20pngs/proj73.png",
+    details: [
+      {
+        icon: <FaCode />,
+        title: 'Language : ',
+        desc: 'Photoshop',
+      },
+      {
+        icon: <FiExternalLink />,
+        title: 'Preview : ',
+        desc: 'www.github.com',
+      },
+      {
+        icon: '',
+        title: '',
+        desc: "Purple Themed Avatar effect in Photoshop!",
+      },
+    ],
+  },
+  {
+    id: 72,
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj72.webp",
+    title: "Typography Effect (purple)",
+    category: "photoshop",
+    link: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/backup%20pngs/proj72.png",
+    details: [
+      {
+        icon: <FaCode />,
+        title: 'Language : ',
+        desc: 'Photoshop',
+      },
+      {
+        icon: <FiExternalLink />,
+        title: 'Preview : ',
+        desc: 'www.github.com',
+      },
+      {
+        icon: '',
+        title: '',
+        desc: "Purple Themed Typography effect in Photoshop!",
+      },
+    ],
+  },
+  {
+    id: 71,
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj71.webp",
+    title: "Memory Flip Game",
+    category: "next",
+    link: "https://memory-flip-game-five.vercel.app/",
+    details: [
+      {
+        icon: <FaCode />,
+        title: 'Language : ',
+        desc: 'Next JS',
+      },
+      {
+        icon: <FiExternalLink />,
+        title: 'Preview : ',
+        desc: 'www.vercel.com',
+      },
+      {
+        icon: '',
+        title: '',
+        desc: "My Next.js Memory Flip Game!",
+      },
+    ],
+  },
+  {
+    id: 70,
+    img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj70.webp",
+    title: "Memory Game",
+    category: "next",
+    link: "https://memory-game-phi-murex.vercel.app/",
+    details: [
+      {
+        icon: <FaCode />,
+        title: 'Language : ',
+        desc: 'Next JS',
+      },
+      {
+        icon: <FiExternalLink />,
+        title: 'Preview : ',
+        desc: 'www.vercel.com',
+      },
+      {
+        icon: '',
+        title: '',
+        desc: "My Next.js Memory Game!",
+      },
+    ],
+  },
+  {
     id: 69,
     img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj69.webp",
     title: "My Portfolio (2023)",
