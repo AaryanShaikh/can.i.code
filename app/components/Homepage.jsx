@@ -144,7 +144,7 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
         </div>
 
         <section className="home section grid">
-            <img className='home__img' src='../assets/home.png' style={{ filter: `saturate(${isColor ? "1" : "0"})`, transition: ".3s ease-in-out" }} />
+            <img className='home__img' src='../assets/home.webp' style={{ filter: `saturate(${isColor ? "1" : "0"})`, transition: ".3s ease-in-out" }} />
 
             <div className="home__content">
                 <div className="home__data">
@@ -169,7 +169,7 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
                 }
             </div>
             <div className="mobMainTxt">
-                <img src="../../assets/homeMob.png" alt="" />
+                <img src="../../assets/homeMob.webp" alt="" />
                 <div className="txts">
                     <motion.div
                         initial={{ opacity: 0, x: 100 }}
@@ -181,10 +181,10 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
                         <h4>SHAIK</h4>
                     </motion.div>
                     <motion.div
-                     initial={{ opacity: 0, x: -100 }}
-                     whileInView={{ opacity: 1, x: 0 }}
-                     transition={{ delay: 0.5, type: "spring", bounce: 0.6 }} 
-                    className="frontTxt"
+                        initial={{ opacity: 0, x: -100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5, type: "spring", bounce: 0.6 }}
+                        className="frontTxt"
                     >
                         <h4>WEB</h4>
                         <h4>WIZARD</h4>

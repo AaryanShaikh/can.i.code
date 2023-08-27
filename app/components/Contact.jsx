@@ -121,6 +121,15 @@ const Contact = ({ handleLoading, loading, route }) => {
           </motion.div>
         </div>
       </section>
+      <div className='aboutMob'>
+                <div className="textBx">
+                    {
+                        "CONTACT".split("").reverse().join('').split("").map((ele, ind) => {
+                            return <h4 key={ind} style={{ top: `${-130 * ind}px` }}>{ele}</h4>
+                        })
+                    }
+                </div>
+            </div>
     </>
   )
 }

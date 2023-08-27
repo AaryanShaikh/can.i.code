@@ -152,9 +152,16 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
             }
           </AnimatePresence>
         </motion.div>
-
-
       </section>
+      <div className='aboutMob'>
+        <div className="textBx">
+          {
+            "PROJECTS".split("").reverse().join('').split("").map((ele, ind) => {
+              return <h4 key={ind} style={{ top: `${-140 * ind}px` }}>{ele}</h4>
+            })
+          }
+        </div>
+      </div>
     </>
   )
 }

@@ -352,9 +352,9 @@ img {
   color: var(--text-color);
 }
 
-:is(.aboutMob, .homeMob) {
+:is(.homeMob) {
   position: relative;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: none;
   overflow: hidden;
@@ -387,7 +387,7 @@ img {
 }
 
 .mobMainTxt {
-  height: 100%;
+  height: 100dvh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -476,10 +476,12 @@ img {
 .about__container,
 .info__list {
   grid-template-columns: 1fr 380px;
+  z-index: 2;
 }
 
 .resume__container {
   grid-template-columns: repeat(2, 1fr);
+  z-index: 2;
 }
 
 .info__list {
@@ -655,7 +657,7 @@ img {
 .big-card:nth-child(1) {
   transform: translateX(-10%) rotate(-1deg);
   z-index: 2;
-  background-image: url('/assets/bigImg1.png');
+  background-image: url('/assets/bigImg1.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -664,7 +666,7 @@ img {
 .big-card:nth-child(2) {
   transform: rotate(2deg);
   z-index: 4;
-  background-image: url('/assets/bigImg2.png');
+  background-image: url('/assets/bigImg2.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -673,7 +675,7 @@ img {
 .big-card:nth-child(3) {
   transform: translateX(-6%) rotate(-3deg);
   z-index: 6;
-  background-image: url('/assets/bigImg4.png');
+  background-image: url('/assets/bigImg4.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -682,7 +684,7 @@ img {
 .big-card:nth-child(4) {
   transform: translate(10%, 3%) rotate(5deg);
   z-index: 8;
-  background-image: url('/assets/bigImg3.png');
+  background-image: url('/assets/bigImg3.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -695,7 +697,7 @@ img {
 
 .little-card:nth-child(5) {
   z-index: 1;
-  background-image: url('/assets/smallImg1.png');
+  background-image: url('/assets/smallImg1.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -703,7 +705,7 @@ img {
 
 .little-card:nth-child(6) {
   z-index: 3;
-  background-image: url('/assets/smallImg2.png');
+  background-image: url('/assets/smallImg2.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -711,7 +713,7 @@ img {
 
 .little-card:nth-child(7) {
   z-index: 5;
-  background-image: url('/assets/smallImg3.png');
+  background-image: url('/assets/smallImg3.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -719,7 +721,7 @@ img {
 
 .little-card:nth-child(8) {
   z-index: 7;
-  background-image: url('/assets/smallImg4.png');
+  background-image: url('/assets/smallImg4.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -2312,7 +2314,16 @@ img {
   .style__switcher-toggler,
   .theme__toggler,
   .style__switcher {
-    display: none !important;
+    background: transparent;
+    backdrop-filter: blur(5px) brightness(0.5);
+  }
+
+  .style__switcher-toggler {
+    top: 0%;
+  }
+
+  .style__switcher {
+    top: 2%;
   }
 
   .nav__toggle {
@@ -2335,7 +2346,29 @@ img {
   }
 
   .navigation {
-    display: none !important;
+    width: 100vw;
+    height: 50px;
+    z-index: 2 !important;
+  }
+
+  .navigation ul {
+    width: 100vw;
+  }
+
+  .navigation ul li {
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+  }
+
+  .navigation ul li a .icon {
+    line-height: 50px;
+    font-size: 1em;
+  }
+
+  .indicator {
+    height: 50px;
+    width: 50px;
   }
 
   .modal__list {
@@ -2344,11 +2377,123 @@ img {
   }
 
   .main {
-    display: none !important;
+    width: 14em;
+    cursor: pointer;
   }
 
-  :is(.homeMob, .aboutMob) {
+  .main .main_back {
+    opacity: 0;
+    border-radius: 30px;
+  }
+
+  .main .card {
+    --hover-edge-radius: 100%;
+    --hover-edge-offset: 10%;
+    margin: .2em;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: var(--body-color);
+  }
+
+  .main .card svg {
+    opacity: 1;
+    color: var(--first-color);
+  }
+
+  .main .card:nth-child(1) {
+    border-top-left-radius: var(--hover-edge-radius);
+  }
+
+  .main .card:nth-child(3) {
+    border-top-right-radius: var(--hover-edge-radius);
+  }
+
+  .main .card:nth-child(7) {
+    border-bottom-left-radius: var(--hover-edge-radius);
+  }
+
+  .main .card:nth-child(9) {
+    border-bottom-right-radius: var(--hover-edge-radius);
+  }
+
+  .main .card:nth-child(1) svg {
+    margin-top: var(--hover-edge-offset);
+    margin-left: var(--hover-edge-offset);
+  }
+
+  .main .card:nth-child(3) svg {
+    margin-top: var(--hover-edge-offset);
+    margin-right: var(--hover-edge-offset);
+  }
+
+  .main .card:nth-child(7) svg {
+    margin-bottom: var(--hover-edge-offset);
+    margin-left: var(--hover-edge-offset);
+  }
+
+  .main .card:nth-child(9) svg {
+    margin-bottom: var(--hover-edge-offset);
+    margin-right: var(--hover-edge-offset);
+  }
+
+  .main .card:nth-child(5) {
+    border: transparent;
+  }
+
+  .main .text {
+    opacity: 0;
+    z-index: -3;
+  }
+
+  .main :is(.instagram, .twitter, .dribble, .codepen, .uiverse, .discord, .github, .telegram, .reddit) {
+    opacity: 1 !important;
+  }
+
+  :is(.homeMob) {
     display: block;
+  }
+
+  .aboutMob {
+    height: 100%;
+  }
+
+  .navigation ul li.active a .icon {
+    transform: translateY(-23px);
+    color: var(--text-white);
+  }
+
+  .navigation ul li:nth-child(1).active~.indicator {
+    transform: translateX(calc(50px * 0));
+  }
+
+  .navigation ul li:nth-child(2).active~.indicator {
+    transform: translateX(calc(50px * 1));
+  }
+
+  .navigation ul li:nth-child(3).active~.indicator {
+    transform: translateX(calc(50px * 2));
+  }
+
+  .navigation ul li:nth-child(4).active~.indicator {
+    transform: translateX(calc(50px * 3));
+  }
+
+  .navigation ul li:nth-child(5).active~.indicator {
+    transform: translateX(calc(50px * 4));
+  }
+
+  .navigation ul li:nth-child(6).active~.indicator {
+    transform: translateX(calc(50px * 5));
+  }
+
+  .navigation ul li:nth-child(7).active~.indicator {
+    transform: translateX(calc(50px * 6));
+  }
+
+  :is(.portfolio__container, .section__title, .contact) {
+    z-index: 2;
+    position: relative;
   }
 
 }
