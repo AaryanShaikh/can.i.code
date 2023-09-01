@@ -217,7 +217,7 @@ export const skills = [
 
 export const portfolio = [
   {
-    id: 72,
+    id: 73,
     img: "https://github.com/AaryanShaikh/can.i.code/raw/main/public/assets/proj73.webp",
     title: "Avatar Logo (purple)",
     category: "photoshop",
