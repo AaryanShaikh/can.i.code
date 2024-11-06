@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
-import ReactLenis from '@studio-freight/react-lenis'
 
 const Project = ({ img, title, details, link }) => {
     const [modal, setmodal] = useState(false)
@@ -11,7 +10,6 @@ const Project = ({ img, title, details, link }) => {
     }
 
     return (
-        <ReactLenis root>
         <motion.div
             layout
             initial={{ opacity: 0, scale: 0.5 }}
@@ -84,7 +82,6 @@ const Project = ({ img, title, details, link }) => {
                 }
             </AnimatePresence>
         </motion.div>
-        </ReactLenis>
     )
 }
 

@@ -13,6 +13,21 @@ import PropTypes from 'prop-types'
 import Loader from './Loader'
 import { handleLoading } from '@/store/actions/theme'
 import { BiUpArrow } from 'react-icons/bi'
+import ReactLenis from '@studio-freight/react-lenis'
+import { FixedSizeList as List } from 'react-window';
+
+const ProjectList = ({ data }) => (
+  <List
+     height={2900}         // Adjust based on your viewport height
+     itemCount={data.length}
+     itemSize={9}       // Adjust based on your item size
+     width={720}
+  >
+     {({ index, style }) => (
+           <Project key={data[index].id} {...data[index]} />
+     )}
+  </List>
+);
 
 const Projects = ({ handleLoading, loading, route, themeColor }) => {
   const [selFilter, setselFilter] = useState("all")
@@ -21,6 +36,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
   const divOffsetY = useTransform(scrollY, [0, 200], [0, -200]);
   const [showButton, setshowButton] = useState(false)
   const [scrollPercentage, setscrollPercentage] = useState(0)
+  const [visibleItems, setVisibleItems] = useState(20);
 
   useEffect(() => {
     handleLoading(false)
@@ -33,6 +49,10 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
       const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = (window.scrollY / totalHeight) * 100;
       setscrollPercentage(scrolled);
+
+      if (window.innerHeight + document.documentElement.scrollTop + 100 >= document.documentElement.offsetHeight) {
+        setVisibleItems((prevVisibleItems) => prevVisibleItems + 10); // Increment items
+     }
     };
     window.addEventListener('scroll', handleScroll);
     const list = document.querySelectorAll('.list')
@@ -59,7 +79,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
   };
 
   return (
-    <>
+    <ReactLenis root>
       <div id="progress" onClick={handleScrollToTop} style={{ background: `conic-gradient(${themeColor} ${Math.floor(scrollPercentage) + 1}%, transparent 0%)`, opacity: showButton ? "1" : "0" }}>
         <span id="progress-value"><BiUpArrow /></span>
       </div>
@@ -145,11 +165,9 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
 
         <motion.div layout className="portfolio__container container grid">
           <AnimatePresence>
-            {
-              filterData.map((ele, ind) => {
-                return <Project key={ele.id} {...ele} />
-              })
-            }
+          {filterData.slice(0, visibleItems).map((ele) => (
+            <Project key={ele.id} {...ele} />
+         ))}
           </AnimatePresence>
         </motion.div>
       </section>
@@ -162,7 +180,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
           }
         </div>
       </div>
-    </>
+    </ReactLenis>
   )
 }
 
