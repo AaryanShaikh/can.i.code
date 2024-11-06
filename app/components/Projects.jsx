@@ -79,7 +79,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
   };
 
   return (
-    <ReactLenis root>
+    <ReactLenis root options={{duration:2}}>
       <div id="progress" onClick={handleScrollToTop} style={{ background: `conic-gradient(${themeColor} ${Math.floor(scrollPercentage) + 1}%, transparent 0%)`, opacity: showButton ? "1" : "0" }}>
         <span id="progress-value"><BiUpArrow /></span>
       </div>
