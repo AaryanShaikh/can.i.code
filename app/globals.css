@@ -2013,7 +2013,7 @@ img {
 /* ---------------------------------------------------- Page Transition ---------------------------------------------------- */
 
 .pageTransitionMain {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 101%;
   z-index: 100;

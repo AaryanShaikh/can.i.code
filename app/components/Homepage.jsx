@@ -144,7 +144,7 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
         </div>
 
         <section className="home section grid">
-            <img className='home__img' src='../assets/home.webp' style={{ filter: `saturate(${isColor ? "1" : "0"})`, transition: ".3s ease-in-out" }} />
+            <img loading="lazy" className='home__img' src='../assets/home.webp' style={{ filter: `saturate(${isColor ? "1" : "0"})`, transition: ".3s ease-in-out" }} />
 
             <div className="home__content">
                 <div className="home__data">
@@ -169,7 +169,7 @@ const Homepage = ({ loading, handleLoading, route, handleRouteSelected, handleIs
                 }
             </div>
             <div className="mobMainTxt">
-                <img src="../../assets/homemob.webp" alt="" />
+                <img loading="lazy" src="../../assets/homemob.webp" alt="" />
                 <div className="txts">
                     <motion.div
                         initial={{ opacity: 0, x: 100 }}

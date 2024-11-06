@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
+import ReactLenis from '@studio-freight/react-lenis'
 
 const Project = ({ img, title, details, link }) => {
     const [modal, setmodal] = useState(false)
@@ -10,6 +11,7 @@ const Project = ({ img, title, details, link }) => {
     }
 
     return (
+        <ReactLenis root>
         <motion.div
             layout
             initial={{ opacity: 0, scale: 0.5 }}
@@ -46,7 +48,7 @@ const Project = ({ img, title, details, link }) => {
 
                 </AnimatePresence>
 
-                <img src={img} onLoad={() => { setisImgLoad(false) }} />
+                <img loading="lazy" src={img} onLoad={() => { setisImgLoad(false) }} />
                 <div className='project_hover_item'>
                     <h3 className="portfolio__title">{title}</h3>
                 </div>
@@ -60,7 +62,7 @@ const Project = ({ img, title, details, link }) => {
                         className="portfolio__modal"
                     >
                         <div className="portfolio__modal-content">
-                            <img src="../../assets/close.png" alt="" className="modal__close" onClick={ontoggleModal} />
+                            <img loading="lazy" src="../../assets/close.png" alt="" className="modal__close" onClick={ontoggleModal} />
 
                             <h3 className="modal__title">{title}</h3>
                             <ul className="modal__list grid">
@@ -76,12 +78,13 @@ const Project = ({ img, title, details, link }) => {
                                 })}
                             </ul>
 
-                            <img src={img} alt="" className="modal__img" />
+                            <img loading="lazy" src={img} alt="" className="modal__img" />
                         </div>
                     </motion.div> : ""
                 }
             </AnimatePresence>
         </motion.div>
+        </ReactLenis>
     )
 }
 

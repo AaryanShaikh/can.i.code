@@ -13,6 +13,7 @@ import PropTypes from 'prop-types'
 import { handleLoading } from '@/store/actions/theme';
 import { BiUpArrow } from 'react-icons/bi';
 import DownloadCV from './DownloadCV';
+import ReactLenis from '@studio-freight/react-lenis';
 
 const About = ({ handleLoading, loading, route, themeColor }) => {
     const [showButton, setshowButton] = useState(false)
@@ -42,7 +43,7 @@ const About = ({ handleLoading, loading, route, themeColor }) => {
     };
 
     return (
-        <>
+        <ReactLenis root>
             <div id="progress" onClick={handleScrollToTop} style={{ background: `conic-gradient(${themeColor} ${Math.floor(scrollPercentage) + 1}%, transparent 0%)`, opacity: showButton ? "1" : "0" }}>
                 <span id="progress-value"><BiUpArrow /></span>
             </div>
@@ -150,7 +151,7 @@ const About = ({ handleLoading, loading, route, themeColor }) => {
                     }
                 </div>
             </div>
-        </>
+            </ReactLenis>
     )
 }
 
