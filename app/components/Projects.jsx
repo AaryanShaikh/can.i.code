@@ -4,7 +4,7 @@ import { portfolio } from '../data'
 import Project from './Project'
 import { HiOutlineSquares2X2 } from 'react-icons/hi2'
 import { TbBrandJavascript } from 'react-icons/tb'
-import { FaReact, FaUnity } from 'react-icons/fa'
+import { FaArrowRight, FaReact, FaUnity } from 'react-icons/fa'
 import { SiAdobephotoshop, SiNextdotjs } from 'react-icons/si'
 import { AiFillAndroid } from 'react-icons/ai'
 import { motion, AnimatePresence, useTransform, useViewportScroll } from "framer-motion"
@@ -14,20 +14,12 @@ import Loader from './Loader'
 import { handleLoading } from '@/store/actions/theme'
 import { BiUpArrow } from 'react-icons/bi'
 import ReactLenis from '@studio-freight/react-lenis'
-import { FixedSizeList as List } from 'react-window';
 
-const ProjectList = ({ data }) => (
-  <List
-     height={2900}         // Adjust based on your viewport height
-     itemCount={data.length}
-     itemSize={9}       // Adjust based on your item size
-     width={720}
-  >
-     {({ index, style }) => (
-           <Project key={data[index].id} {...data[index]} />
-     )}
-  </List>
-);
+const spring = {
+  type: "spring",
+  damping: 20,
+  stiffness: 300,
+};
 
 const Projects = ({ handleLoading, loading, route, themeColor }) => {
   const [selFilter, setselFilter] = useState("all")
@@ -37,6 +29,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
   const [showButton, setshowButton] = useState(false)
   const [scrollPercentage, setscrollPercentage] = useState(0)
   const [visibleItems, setVisibleItems] = useState(20);
+  const [selectedProject, setselectedProject] = useState(null);
 
   useEffect(() => {
     handleLoading(false)
@@ -52,7 +45,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
 
       if (window.innerHeight + document.documentElement.scrollTop + 100 >= document.documentElement.offsetHeight) {
         setVisibleItems((prevVisibleItems) => prevVisibleItems + 10); // Increment items
-     }
+      }
     };
     window.addEventListener('scroll', handleScroll);
     const list = document.querySelectorAll('.list')
@@ -79,7 +72,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
   };
 
   return (
-    <ReactLenis root options={{duration:2}}>
+    <ReactLenis root options={{ duration: 2 }}>
       <div id="progress" onClick={handleScrollToTop} style={{ background: `conic-gradient(${themeColor} ${Math.floor(scrollPercentage) + 1}%, transparent 0%)`, opacity: showButton ? "1" : "0" }}>
         <span id="progress-value"><BiUpArrow /></span>
       </div>
@@ -104,7 +97,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
       <section className="portfolio section">
         <h2 className="section__title">My <span>{portfolio.length}</span> Projects</h2>
 
-        <div className="filter-container container">
+        {/* <div className="filter-container container">
           <motion.div
             style={{
               position: "fixed", y: divOffsetY, zIndex: "99",
@@ -120,40 +113,16 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
                   <span className="text">All</span>
                 </a>
               </li>
-              <li className="list" data-filter=".web">
-                <a href="" onClick={(e) => { handleClick(e, "vanilla") }}>
-                  <span className="icon"><TbBrandJavascript /></span>
-                  <span className="text">Vanilla</span>
-                </a>
-              </li>
-              <li className="list" data-filter=".flyers">
-                <a href="" onClick={(e) => { handleClick(e, "react") }}>
-                  <span className="icon"><FaReact /></span>
-                  <span className="text">React</span>
-                </a>
-              </li>
               <li className="list" data-filter=".bcards">
                 <a href="" onClick={(e) => { handleClick(e, "next") }}>
-                  <span className="icon"><SiNextdotjs /></span>
-                  <span className="text">Next</span>
-                </a>
-              </li>
-              <li className="list">
-                <a href="" onClick={(e) => { handleClick(e, "unity") }}>
-                  <span className="icon"><FaUnity /></span>
-                  <span className="text">Unity</span>
+                  <span className="icon"><MdOutlineDesktopMac /></span>
+                  <span className="text">Website</span>
                 </a>
               </li>
               <li className="list">
                 <a href="" onClick={(e) => { handleClick(e, "android") }}>
                   <span className="icon"><AiFillAndroid /></span>
                   <span className="text">Android</span>
-                </a>
-              </li>
-              <li className="list" >
-                <a href="" onClick={(e) => { handleClick(e, "photoshop") }}>
-                  <span className="icon"><SiAdobephotoshop /></span>
-                  <span className="text">Photoshop</span>
                 </a>
               </li>
               <div className="indicator">
@@ -169,7 +138,74 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
             <Project key={ele.id} {...ele} />
          ))}
           </AnimatePresence>
-        </motion.div>
+        </motion.div> */}
+
+        <div className="projects-container">
+          {
+            filterData.map((project) => {
+              return <div key={project.id} className="project-card" onClick={() => { setselectedProject(project) }}>
+                <motion.div
+                  initial={{ clipPath: "polygon(20% 25%, 80% 25%, 80% 80%, 20% 80%)" }}
+                  whileInView={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+                  transition={{ duration: .6 }}
+                  layoutId={`project-img-${project.id}`}
+                  className="project-img-container">
+                  <motion.img
+                    initial={{ scale: 1.3 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: .4 }}
+                    src={project.img} alt={project.title} />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  className="project-type"
+                  transition={{ duration: .8 }}
+                  layoutId={`project-type-${project.id}`}
+                >
+                  <span>{project.type}</span>
+                </motion.div>
+                <div className="project-title">
+                  <div className="selector"><FaArrowRight /></div>
+                  <motion.span
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    layoutId={`project-title-${project.id}`}
+                  >{project.title}</motion.span>
+                </div>
+              </div>
+            })
+          }
+        </div>
+
+        <AnimatePresence>
+          {
+            selectedProject == null ? <></> :
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                layout
+                className="project-selected-container" onClick={() => { setselectedProject(null) }}>
+                <div className="project-selected-card" onClick={(e) => e.stopPropagation()}>
+                  <motion.div layoutId={`project-img-${selectedProject.id}`} className="project-selected-img-container">
+                    <img src={selectedProject?.img} alt="" />
+                  </motion.div>
+                  <div className="project-selected-top">
+                    <motion.div className="project-selected-title" layoutId={`project-title-${selectedProject.id}`}>{selectedProject?.title}</motion.div>
+                    <motion.div layoutId={`project-type-${selectedProject.id}`} className="project-selected-type">{selectedProject?.type}</motion.div>
+                  </div>
+                  <div className="project-selected-bottom">
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{duration:1.4}}
+                    >{selectedProject?.desc}</motion.p>
+                  </div>
+                </div>
+              </motion.div>
+          }
+        </AnimatePresence>
+
       </section>
       <div className='aboutMob'>
         <div className="textBx">
