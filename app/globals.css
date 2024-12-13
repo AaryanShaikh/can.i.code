@@ -1584,6 +1584,8 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px 10px;
+  position: relative;
+  z-index: 2;
 }
 
 .projects-container .project-card {
@@ -1651,6 +1653,7 @@ img {
   align-items: center;
   backdrop-filter: brightness(0.2) blur(10px);
   cursor: pointer;
+  z-index: 9;
 }
 
 .project-selected-container .project-selected-card {
@@ -1673,6 +1676,15 @@ img {
   width: 100%;
   z-index: 1;
   overflow: hidden;
+  position: relative;
+}
+
+.project-selected-container .project-selected-card .project-selected-img-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(0deg, var(--container-color), transparent 40%);
 }
 
 .project-selected-container .project-selected-card .project-selected-img-container img {
@@ -1696,8 +1708,13 @@ img {
 }
 
 .project-selected-title {
-  font-size: 5vh;
+  font-size: clamp(1.3rem, 5vw, 40px);
   font-family: "poppins";
+}
+
+.project-selected-bottom p{
+  font-size: clamp(14px, 3vw, 18px);
+  font-weight: 300;
 }
 
 .project-selected-type {
@@ -2317,28 +2334,20 @@ img {
 }
 
 @media screen and (max-width:768px) {
-  .projects-container{
-    grid-template-columns: repeat(1,auto);
+  .projects-container {
+    grid-template-columns: repeat(1, auto);
   }
-  
-  .project-selected-container{
+
+  .project-selected-container {
     z-index: 9;
   }
 
-  .project-selected-container .project-selected-card{
+  .project-selected-container .project-selected-card {
     width: 90vw;
   }
 
-  .project-selected-title{
-    font-size: 1.3rem;
-  }
-
-  .project-selected-type{
+  .project-selected-type {
     font-size: .8rem;
-  }
-
-  .project-selected-bottom p{
-    font-size: .7rem;
   }
 
   .home {

@@ -96,50 +96,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
       </div>
       <section className="portfolio section">
         <h2 className="section__title">My <span>{portfolio.length}</span> Projects</h2>
-
-        {/* <div className="filter-container container">
-          <motion.div
-            style={{
-              position: "fixed", y: divOffsetY, zIndex: "99",
-            }}
-            className="navigation"
-          >
-            <ul>
-              <li className="list active" data-filter="all">
-                <a href="" onClick={(e) => { handleClick(e, "all") }}>
-                  <span className="icon">
-                    <span><HiOutlineSquares2X2 /></span>
-                  </span>
-                  <span className="text">All</span>
-                </a>
-              </li>
-              <li className="list" data-filter=".bcards">
-                <a href="" onClick={(e) => { handleClick(e, "next") }}>
-                  <span className="icon"><MdOutlineDesktopMac /></span>
-                  <span className="text">Website</span>
-                </a>
-              </li>
-              <li className="list">
-                <a href="" onClick={(e) => { handleClick(e, "android") }}>
-                  <span className="icon"><AiFillAndroid /></span>
-                  <span className="text">Android</span>
-                </a>
-              </li>
-              <div className="indicator">
-
-              </div>
-            </ul>
-          </motion.div>
-        </div>
-
-        <motion.div layout className="portfolio__container container grid">
-          <AnimatePresence>
-          {filterData.slice(0, visibleItems).map((ele) => (
-            <Project key={ele.id} {...ele} />
-         ))}
-          </AnimatePresence>
-        </motion.div> */}
-
+        
         <div className="projects-container">
           {
             filterData.map((project) => {
