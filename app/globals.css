@@ -1671,15 +1671,19 @@ img {
   box-shadow: 0px 0px 10px 2px #0000005c;
 }
 
-.project-selected-container .project-selected-card .project-selected-img-container {
-  height: 70%;
+.project-selected-container .project-selected-card a{
+  height: 55%;
+}
+
+.project-selected-container .project-selected-card a .project-selected-img-container {
+  height: 100%;
   width: 100%;
   z-index: 1;
   overflow: hidden;
   position: relative;
 }
 
-.project-selected-container .project-selected-card .project-selected-img-container::before {
+.project-selected-container .project-selected-card a .project-selected-img-container::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -1687,7 +1691,7 @@ img {
   background: linear-gradient(0deg, var(--container-color), transparent 40%);
 }
 
-.project-selected-container .project-selected-card .project-selected-img-container img {
+.project-selected-container .project-selected-card a .project-selected-img-container img {
   height: 100%;
   width: 100%;
   object-fit: cover;

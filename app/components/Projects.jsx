@@ -96,7 +96,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
       </div>
       <section className="portfolio section">
         <h2 className="section__title">My <span>{portfolio.length}</span> Projects</h2>
-        
+
         <div className="projects-container">
           {
             filterData.map((project) => {
@@ -144,9 +144,11 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
                 layout
                 className="project-selected-container" onClick={() => { setselectedProject(null) }}>
                 <div className="project-selected-card" onClick={(e) => e.stopPropagation()}>
-                  <motion.div layoutId={`project-img-${selectedProject.id}`} className="project-selected-img-container">
-                    <img src={selectedProject?.img} alt="" />
-                  </motion.div>
+                  <a href={selectedProject?.link} alt={selectedProject?.title} target='_blank'>
+                    <motion.div layoutId={`project-img-${selectedProject.id}`} className="project-selected-img-container">
+                      <img src={selectedProject?.img} alt="" />
+                    </motion.div>
+                  </a>
                   <div className="project-selected-top">
                     <motion.div className="project-selected-title" layoutId={`project-title-${selectedProject.id}`}>{selectedProject?.title}</motion.div>
                     <motion.div layoutId={`project-type-${selectedProject.id}`} className="project-selected-type">{selectedProject?.type}</motion.div>
@@ -155,7 +157,7 @@ const Projects = ({ handleLoading, loading, route, themeColor }) => {
                     <motion.p
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      transition={{duration:1.4}}
+                      transition={{ duration: 1.4 }}
                     >{selectedProject?.desc}</motion.p>
                   </div>
                 </div>
