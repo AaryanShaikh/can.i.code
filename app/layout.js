@@ -15,7 +15,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://github.com/AaryanShaikh/My-Stock/raw/main/portfolio2023/meta.gif",
+        url: "https://github.com/AaryanShaikh/My-Stock/raw/main/portfolio2023/meta.webp",
         width: 1400,
         height: 735,
         alt: "Aaryan Shaik's Portfolio Image"
@@ -27,7 +27,7 @@ export const metadata = {
     title: "Aaryan Shaik",
     description: "I am a Frontend Developer passionate about building seamless, dynamic, and visually stunning web experiences.",
     images: [
-      "https://github.com/AaryanShaikh/My-Stock/raw/main/portfolio2023/meta.gif"
+      "https://github.com/AaryanShaikh/My-Stock/raw/main/portfolio2023/meta.webp"
     ]
   }
 };
