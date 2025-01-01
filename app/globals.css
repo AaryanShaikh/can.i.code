@@ -1947,7 +1947,7 @@ img {
 
 .form__input-group {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 30px;
 }
 
@@ -2266,7 +2266,7 @@ img {
   }
 
   .form__input-group {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     column-gap: 24px;
   }
 

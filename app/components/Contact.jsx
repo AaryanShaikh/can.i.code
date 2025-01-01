@@ -95,9 +95,6 @@ const Contact = ({ handleLoading, loading, route }) => {
               <div className="form__input-div">
                 <input type="text" value={conData.email} onChange={(e) => { setconData({ ...conData, "email": e.target.value }) }} placeholder='Your Email' className="form__control" />
               </div>
-              <div className="form__input-div">
-                <input type="text" value={conData.subject} onChange={(e) => { setconData({ ...conData, "subject": e.target.value }) }} placeholder='Your Subject' className="form__control" />
-              </div>
 
             </div>
             <div className="form__input-div">
